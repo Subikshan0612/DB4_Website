@@ -1,0 +1,31 @@
+/* Existing styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Global background for the entire app */
+.bg-gradient-dark {
+  background: linear-gradient(to right, #2c003e, #5f0067, #000000);
+  color: #ffffff; /* Optional: Ensure text is readable on dark backgrounds */
+}
+
+
+/* Import TailwindCSS styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Custom styles */
+body {
+  @apply bg-gray-50 text-gray-900;
+}
