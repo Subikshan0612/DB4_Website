@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
-import Map from "./Map"; // Importing Map component
+//import Map from "./Map"; // Importing Map component
 
 const Contact = () => {
   const [result, setResult] = useState(""); // State to hold form submission result message
@@ -111,20 +111,31 @@ const Contact = () => {
 
           {/* Map Section */}
           <motion.div
-            className="contact-map w-full lg:w-[55%] h-[400px] mt-8 lg:mt-0"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            style={{
-              maxWidth: "70vw", // Set map width to 70vw
-              maxHeight: "70vh", // Set map height to 70vh
-              marginLeft: "0", // Align map to the left side
-              marginRight: "0", // Remove any right margin
-              margin: "0 auto", // Center map vertically and horizontally
-            }}
-          >
-            <Map /> {/* Using Map component here */}
-          </motion.div>
+  className="contact-map w-full lg:w-[55%] h-[400px] mt-8 lg:mt-0"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+  style={{
+    maxWidth: "70vw",
+    maxHeight: "70vh",
+    marginLeft: "0",
+    marginRight: "0",
+    margin: "0 auto",
+  }}
+>
+  <div className="google-map animated-map">
+    <iframe
+      title="Db4 Cloud Technologies"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5883697443787!2d80.24189447698326!3d13.061852980073699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52664208764771%3A0x64f4d7900d3c8e3b!2sICICI%20Bank%20Nungambakkam%2C%20Chennai-Branch%20%26%20ATM!5e0!3m2!1sen!2sin!4v1732624324102!5m2!1sen!2sin"
+      width="100%"
+      height="300"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</motion.div> 
         </div>
 
         {/* Result Message */}
