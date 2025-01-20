@@ -124,14 +124,14 @@ const Footer = () => {
                 Services
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/blog"
                 className="hover:text-yellow-300 transition duration-300"
               >
                 Blog
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="/careers"
