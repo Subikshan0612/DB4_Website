@@ -31,7 +31,7 @@ const Contact = () => {
 
     // Create FormData from the form
     const formData = new FormData(event.target);
-    formData.append("access_key", "9b4978cd-5e6e-4863-95d9-e85eaed95bd5");
+    formData.append("access_key", "af96408c-08c5-4528-a729-9f5dbabad455");
 
     // Send form data to Web3Forms API
     const response = await fetch("https://api.web3forms.com/submit", {
