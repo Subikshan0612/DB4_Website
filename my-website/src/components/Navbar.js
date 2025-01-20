@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 const Navbar = () => {
-  const [opacity, setOpacity] = useState(1); // State for controlling opacity
+  const [opacity, setOpacity] = useState(1); 
 
   useEffect(() => {
     // Floating and tilting animation
@@ -102,3 +102,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
