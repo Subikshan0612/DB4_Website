@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaLaptopCode, FaDatabase, FaPen, FaUsers } from "react-icons/fa";
+import { FaBriefcase, FaLaptopCode, FaDatabase, FaPen, FaUsers, FaEnvelope } from "react-icons/fa";
 
 const Careers = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animate job listings on scroll
     gsap.fromTo(
       ".job-listing",
       { opacity: 0, scale: 0.8 },
@@ -25,7 +24,6 @@ const Careers = () => {
       }
     );
 
-    // Heading animation
     gsap.fromTo(
       ".careers-heading",
       { opacity: 0, y: -50 },
@@ -38,40 +36,34 @@ const Careers = () => {
       title: "Frontend Developer",
       description: "Join our team to build engaging and interactive user interfaces.",
       location: "Remote",
-      applyLink: "/apply/frontend-developer",
       icon: <FaLaptopCode className="text-6xl text-yellow-300" />,
     },
     {
       title: "Backend Developer",
       description: "We are looking for an experienced backend developer to build scalable server-side applications.",
       location: "New York, USA",
-      applyLink: "/apply/backend-developer",
       icon: <FaDatabase className="text-6xl text-yellow-300" />,
     },
     {
       title: "Full Stack Developer",
       description: "Looking for an all-rounder to work on both frontend and backend of web applications.",
       location: "Remote",
-      applyLink: "/apply/full-stack-developer",
       icon: <FaBriefcase className="text-6xl text-yellow-300" />,
     },
     {
       title: "UI/UX Designer",
       description: "We need a creative UI/UX designer to design user-friendly interfaces and enhance the user experience.",
       location: "Los Angeles, USA",
-      applyLink: "/apply/ui-ux-designer",
       icon: <FaPen className="text-6xl text-yellow-300" />,
     },
     {
       title: "Product Manager",
       description: "Seeking a proactive product manager to oversee the development of innovative products from concept to launch.",
       location: "London, UK",
-      applyLink: "/apply/product-manager",
       icon: <FaUsers className="text-6xl text-yellow-300" />,
     },
   ];
 
-  // Framer Motion hover and tap effects
   const hoverEffect = {
     scale: 1.05,
     transition: { duration: 0.3 },
@@ -85,11 +77,24 @@ const Careers = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-900 via-black to-black text-gray-100">
       <div className="container mx-auto pt-28 px-4">
-        {/* Heading Animation */}
         <h2 className="careers-heading text-4xl font-semibold text-yellow-300 mb-12 text-center">
           Join Our Team
         </h2>
-        {/* Job Listings Grid */}
+
+        {/* How to Apply Section */}
+        <div className="mb-12 text-center bg-gray-900 p-6 rounded-lg shadow-lg">
+          <h3 className="text-2xl font-bold text-yellow-300 mb-4">How to Apply</h3>
+          <p className="text-gray-200 text-lg">
+            Interested candidates can submit their resumes to:
+          </p>
+          <div className="flex items-center justify-center mt-4 space-x-2">
+            <FaEnvelope className="text-yellow-300 text-xl" />
+            <a href="mailto:hr@db4cloud.in" className="text-blue-400 hover:text-blue-600 text-lg">
+              hr@db4cloud.in
+            </a>
+          </div>
+        </div>
+
         <div className="careers grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {jobListings.map((job, index) => (
             <motion.div
@@ -98,7 +103,6 @@ const Careers = () => {
               whileHover={hoverEffect}
               whileTap={tapEffect}
             >
-              {/* Icon Animation */}
               <motion.div
                 className="icon-wrapper"
                 initial={{ opacity: 0, y: -20 }}
@@ -107,7 +111,6 @@ const Careers = () => {
               >
                 {job.icon}
               </motion.div>
-              {/* Title and Description Animations */}
               <motion.h3
                 className="text-2xl font-bold text-yellow-300 mt-4"
                 initial={{ opacity: 0, x: -50 }}
@@ -124,7 +127,6 @@ const Careers = () => {
               >
                 {job.description}
               </motion.p>
-              {/* Job Location */}
               <motion.p
                 className="text-gray-200 mt-2"
                 initial={{ opacity: 0, x: 50 }}
@@ -133,16 +135,6 @@ const Careers = () => {
               >
                 <strong>Location:</strong> {job.location}
               </motion.p>
-              {/* Apply Link */}
-              <motion.a
-                href={job.applyLink}
-                className="text-blue-400 hover:text-blue-600 mt-4 inline-block"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.6 }}
-              >
-                Apply Now
-              </motion.a>
             </motion.div>
           ))}
         </div>
