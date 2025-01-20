@@ -45,7 +45,7 @@ const Logo = () => {
     }
   }, [scrollDirection]);
 
-  return (
+   return (
     <motion.div
     // In the Logo component, update the className of the motion.div:
 className="floating-logo fixed top-0 left-12 w-48 h-48 md:w-56 md:h-56 z-40"

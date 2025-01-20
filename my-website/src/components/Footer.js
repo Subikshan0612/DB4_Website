@@ -184,7 +184,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="mt-12 text-center text-sm text-gray-400">
-        ©2024 Db4Cloud. All Rights Reserved.
+        ©2025 Db4Cloud. All Rights Reserved.
       </div>
     </motion.footer>
   );
