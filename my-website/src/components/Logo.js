@@ -47,7 +47,10 @@ const Logo = () => {
 
   return (
     <motion.div
-      className="floating-logo fixed top-0 left-12 w-48 h-48 md:w-56 md:h-56 z-50" // Moved logo further up
+    // In the Logo component, update the className of the motion.div:
+className="floating-logo fixed top-0 left-12 w-48 h-48 md:w-56 md:h-56 z-40"
+
+      // className="floating-logo fixed top-0 left-12 w-48 h-48 md:w-56 md:h-56 z-50" // Moved logo further up
       whileHover={{ scale: 1.2 }} // Hover scaling effect
     >
       <img
