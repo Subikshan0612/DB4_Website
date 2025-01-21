@@ -57,13 +57,16 @@ const Contact = () => {
   useEffect(() => {
     gsap.fromTo(
       ".contact-form",
-      { scale: 0 },
-      { scale: 1, duration: 1, ease: "elastic.out(1, 0.5)" }
-    );
-    gsap.fromTo(
-      ".contact-map",
-      { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.5 }
+      { 
+        opacity: 0,
+        x: -30 
+      },
+      { 
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }
     );
   }, []);
 
@@ -112,24 +115,23 @@ const Contact = () => {
         </motion.h1>
 
         <div className="flex flex-col lg:flex-row justify-center items-stretch gap-6 max-w-6xl mx-auto">
-          <motion.div
-            className="contact-form w-full lg:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <Formik
-              initialValues={{
-                countryCode: countryCodes[0].code,
-                name: '',
-                phone: '',
-                email: '',
-                message: ''
-              }}
-              validationSchema={validationSchema}
-              onSubmit={onSubmit}
-            >
+        <motion.div
+  className="contact-form w-full lg:w-1/2"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+>
+  <Formik
+    initialValues={{
+      name: '',
+      countryCode: '+91',
+      phone: '',
+      email: '',
+      message: ''
+    }}
+    validationSchema={validationSchema}
+    onSubmit={onSubmit}
+  >
               {({ isSubmitting }) => (
                 <Form className="bg-gray-900 p-8 rounded-xl shadow-2xl space-y-6 h-full flex flex-col">
                   <div className="space-y-2">
@@ -262,7 +264,8 @@ const Contact = () => {
               <FaEnvelope className="text-2xl text-yellow-400 mx-auto" />
             </div>
             <h3 className="text-xl font-bold text-white mb-2 text-center">Email Support</h3>
-            <p className="text-gray-300 text-center">contact@db4cloud.in</p>
+            <a href="mailto:contact@db4cloud.in" className="text-blue-500 hover:underline">
+            contact@db4cloud.in</a>
           </div>        
         </motion.div>
 

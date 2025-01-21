@@ -63,7 +63,7 @@ const Careers = () => {
       icon: <FaUsers className="text-6xl text-yellow-300" />,
     },
     {
-      title: "Technology Internship Program",
+      title: "Technologies Internship Programs",
       description: "Exciting opportunity to gain hands-on experience in Software Development, DevOps practices, AWS Cloud Services, and Microsoft Azure. Get industry-recognized certifications while working on real-world projects. Our structured program includes mentorship from industry experts and comprehensive training in modern development practices.",
       location: "Chennai & Hyderabad",
       icon: <FaGraduationCap className="text-6xl text-yellow-300" />,
