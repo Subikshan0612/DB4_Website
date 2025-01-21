@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
+ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaXTwitter, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa6";
 import gsap from "gsap";
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <motion.footer
       ref={footerRef}
-      className="bg-black text-white py-8 md:py-12 h-auto w-full text-xs md:text-sm"
+      className="bg-black text-white py-2"   // changed
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5, ease: "easeOut" }}
@@ -41,106 +41,73 @@ const Footer = () => {
         width: "100%", // Full width
       }}
     >
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left">
-          {/* Company Info */}
-          <div className="md:w-1/3 mb-6 md:mb-0">
-            <h2 ref={titleRef} className="text-yellow-300 text-sm md:text-base font-bold mb-3">
-              {/* Company Name */}
-            </h2>
-            <a
-              href="/"
-              className="flex flex-col items-center justify-center 
-                h-14 w-36 
-                sm:h-16 sm:w-40 
-                md:h-20 md:w-48 
-                lg:h-24 lg:w-56 
-                text-center font-bold rounded-lg shadow-lg 
-                backdrop-blur-sm"
-            >
-              <span className="text-red-500 text-xs sm:text-sm md:text-base lg:text-lg">
-                Db4Cloud
-              </span>
-              <span className="text-red-500 text-xs sm:text-sm md:text-base lg:text-lg">
-                Technologies Pvt Ltd
-              </span>
-            </a>
-          </div>
-
-          {/* Social Links */}
-          <div className="md:w-1/3 text-center mb-6 md:mb-0">
-            <h4 className="text-sm md:text-base font-semibold text-yellow-300 mb-2">
-              Follow Us
-            </h4>
-            <div
-              ref={socialIconsRef}
-              className="flex justify-center space-x-4 text-xl md:text-2xl"
-            >
-              <a
-                href="https://www.instagram.com/db4cloudtechnologies/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-yellow-300 transition duration-300"
-                aria-label="Instagram"
-              >
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-1">
+          
+        <a
+        href="/"
+        className="flex flex-col items-center justify-center
+          h-16 w-40
+          sm:h-20 sm:w-48
+          md:h-24 md:w-56
+          lg:h-28 lg:w-64
+          text-center font-bold font-wild rounded-lg shadow-lg
+          backdrop-blur-sm"
+      >
+        <span className="text-primary-500 text-xs sm:text-sm md:text-base lg:text-lg"
+        style={{ color: "rgb(245, 7, 7)" }}
+        >
+          Db4Cloud
+        </span>
+        <span 
+        style={{ color: "rgb(245, 7, 7)" }}
+        className="text-primary-700 text-xs sm:text-sm md:text-base lg:text-lg">
+          Technologies Pvt Ltd
+        </span>
+      </a>
+          
+          
+          
+          
+          {/* <h2 className="text-2xl font-semibold mb-3 md:mb-0 text-red-600" ref={titleRef}>
+            Db4Cloud Technologies
+          </h2> */}
+          
+          <div className="text-center md:text-right">
+            <h4 className="text-lg font-semibold text-yellow-300 mb-1">Follow Us</h4>
+            <div ref={socialIconsRef} className="flex space-x-4 text-xl">
+              <a href="https://www.instagram.com/db4cloudtechnologies/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
                 <FaInstagram />
               </a>
-              <a
-                href="https://x.com/DB4Cloud"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-yellow-300 transition duration-300"
-                aria-label="Twitter"
-              >
-                <FaTwitter />
+              <a href="https://x.com/DB4Cloud" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
+                <FaXTwitter />
               </a>
-              <a
-                href="https://www.linkedin.com/company/103363660/admin/dashboard/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-yellow-300 transition duration-300"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/company/103363660/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
                 <FaLinkedin />
               </a>
-              <a
-                href="https://www.facebook.com/people/Db4Cloud-Technologies-Pvt-Ltd/61563263484445/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-yellow-300 transition duration-300"
-                aria-label="Facebook"
-              >
+              <a href="https://www.facebook.com/people/Db4Cloud-Technologies-Pvt-Ltd/61563263484445/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
                 <FaFacebook />
               </a>
-              <a
-                href="https://www.youtube.com/channel/UCvhr4y0CQY8C2-B8xcB9X6w"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-red-500 transition duration-300"
-                aria-label="YouTube"
-              >
+              <a href="https://www.youtube.com/channel/UCvhr4y0CQY8C2-B8xcB9X6w" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition duration-300">
                 <FaYoutube />
               </a>
             </div>
           </div>
         </div>
 
-        <hr className="my-6 border-gray-600" />
-        
-        <div className="grid md:grid-cols-4 gap-8 px-4">
-          {/* Company Description */}
-          <div className="md:col-span-1">
-            <p className="text-gray-400 text-xs md:text-sm mb-3 leading-relaxed font-medium">
-              Db4Cloud Technologies IT Services is the leader in the IT field, working on offshore products and outsourcing software development.
+        <div className="border-b border-yellow-300 mb-3"></div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left text-sm">
+          <div>
+            <p className="text-gray-400 mb-4">
+              Db4Cloud Technologies IT Services is the leader in the IT field,
+              working on offshore products and outsourcing software development.
             </p>
           </div>
 
-          {/* Useful Links */}
-          <div className="pl-4">
-            <h4 className="text-sm md:text-base font-bold text-yellow-300 mb-3">
-              Useful Links
-            </h4>
-            <ul className="space-y-2 text-xs md:text-sm">
+          <div>
+            <h4 className="text-lg font-semibold text-yellow-300 mb-2">Useful Links</h4>
+            <ul className="space-y-1">
               <li><a href="/" className="hover:text-yellow-300 transition duration-300">Home</a></li>
               <li><a href="/industries" className="hover:text-yellow-300 transition duration-300">Industries</a></li>
               <li><a href="/services" className="hover:text-yellow-300 transition duration-300">Services</a></li>
@@ -149,40 +116,31 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Industries */}
-          <div className="pl-4">
-            <h4 className="text-sm md:text-base font-bold text-yellow-300 mb-3">
-              Industries
-            </h4>
-            <ul className="space-y-2 text-xs md:text-sm">
+          <div>
+            <h4 className="text-lg font-semibold text-yellow-300 mb-2">Industries</h4>
+            <ul className="space-y-1">
               <li>Education</li>
               <li>Finance</li>
               <li>Retail</li>
               <li>Automotive</li>
               <li>Manufacturing</li>
-              <li>Aerospace</li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="pl-4">
-            <h4 className="text-sm md:text-base font-bold text-yellow-300 mb-3">
-              Services
-            </h4>
-            <ul className="space-y-2 text-xs md:text-sm">
+          <div>
+            <h4 className="text-lg font-semibold text-yellow-300 mb-2">Services</h4>
+            <ul className="space-y-1">
               <li>Atlassian Services</li>
               <li>AWS and Azure Migration</li>
               <li>DevOps Solutions</li>
               <li>Cloud Management</li>
               <li>Salesforce Services</li>
-              <li>Snowflake Services</li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-6 text-center text-xs md:text-sm text-gray-400">
-          ©2024 Db4Cloud. All Rights Reserved.
+        <div className="mt-6 text-center text-xs text-gray-400">
+          ©2025 Db4Cloud. All Rights Reserved.
         </div>
       </div>
     </motion.footer>
@@ -190,3 +148,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

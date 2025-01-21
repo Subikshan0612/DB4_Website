@@ -54,10 +54,10 @@ const Navbar = () => {
   // Update the nav element in Navbar.js
  
   return (
-    <nav
+    <nav 
     className="navbar fixed top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-700 to-indigo-800 text-white py-4 px-8 rounded-full shadow-2xl z-50 max-w-[75%] transition-all duration-300 ease-in-out group bg-opacity-60 ms-32"  
     style={{ opacity }}>
- 
+
       <div className="flex items-center justify-between w-full">
         {/* Mobile Menu Button - Now positioned on the right */}
         <div className="block md:hidden absolute right-4">

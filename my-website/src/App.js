@@ -14,6 +14,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+        {/* Add the logo outside the Navbar */}
          <Logo />
         <Navbar />
         <div className="App-content">
