@@ -27,6 +27,7 @@ const App = () => {
           </Routes>
         </div>
         <div className="App-footer">
+        {/* Add Footer component */}
         <Footer />
         </div>
       </div>

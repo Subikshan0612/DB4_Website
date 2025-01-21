@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import stockImage from "../assets/stock1.jpg";
-import { FaCode, FaCloud, FaLock, FaMobileAlt, FaRobot } from "react-icons/fa";
+import { FaCode, FaCloud, FaLock, FaMobileAlt, FaRobot, FaChartLine, FaJira, FaBullhorn, FaBrain } from "react-icons/fa";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -15,23 +15,23 @@ const Home = () => {
 
   const carouselImages = [
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536717/1_eohu8p.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737436780/cloud-computing-2001090_pexu86.jpg", 
       header: "Cloud Innovation" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732537028/12_yp59g5.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737437153/digital-marketing-1725340_derbba.jpg", 
       header: "Digital Transformation" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536821/4_o6dlob.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737436793/ai-generated-8540913_uzparo.jpg", 
       header: "AI Solutions" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536844/5_swhlwx.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737436762/technology-8760347_n8gk0j.jpg", 
       header: "Secure Infrastructure" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536950/9_faoxfd.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737437063/startup-594090_l2km65.jpg", 
       header: "Business Optimization" 
     }
   ];
@@ -194,21 +194,23 @@ const Home = () => {
 
     
 
+
+
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl">
-  <div className="flex flex-row items-center justify-between">
+  <div className="flex flex-col md:flex-row items-center justify-between">
     {/* Left side content */}
-    <div className="w-1/2 pr-8">
+    <div className="w-full md:w-1/2 md:pr-8 mb-6 md:mb-0">
       <motion.h2
-        className="text-4xl font-semibold text-yellow-400 mb-6"
+        className="text-4xl font-semibold text-yellow-400 mb-6 text-center md:text-left"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
         About Us
       </motion.h2>
-      
+
       <motion.p
-        className="text-lg text-gray-200 mb-6"
+        className="text-lg text-gray-200 mb-6 text-center md:text-left"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -221,7 +223,7 @@ const Home = () => {
       </motion.p>
 
       <motion.p
-        className="text-lg text-gray-200 mb-6"
+        className="text-lg text-gray-200 mb-6 text-center md:text-left"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1 }}
@@ -235,7 +237,7 @@ const Home = () => {
 
     {/* Right side image */}
     <motion.div
-      className="w-1/2"
+      className="w-full md:w-1/2"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 1.5 }}
@@ -243,91 +245,99 @@ const Home = () => {
       <img
         src={stockImage}
         alt="About Us"
-        className="rounded-lg shadow-2xl border-4 border-yellow-500 w-full h-full object-cover"
+        className="rounded-lg shadow-2xl border-4 border-yellow-500 w-full h-auto object-cover"
       />
     </motion.div>
   </div>
 </section>
 
 
-      {/* NEW: Image Carousel Section */}
-      <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl overflow-hidden">
-        <motion.h2
-          className="text-4xl font-semibold text-yellow-400 mb-6 text-center"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Our Journey
-        </motion.h2>
-        <div className="relative w-full h-[500px] overflow-hidden rounded-lg">
-          {carouselImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: index === currentSlide ? 1 : 0,
-                scale: index === currentSlide ? 1 : 0.9
-              }}
-              transition={{ duration: 1 }}
-            >
-              <img 
-                src={image.src} 
-                alt={image.header} 
-                className="w-full h-full object-contain"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-4">
-                <h3 className="text-2xl font-bold">{image.header}</h3>
-              </div>
-            </motion.div>
-          ))}
+
+
+    
+
+
+<section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl overflow-hidden">
+  <motion.h2
+    className="text-4xl font-semibold text-yellow-400 mb-6 text-center"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    Our Journey
+  </motion.h2>
+  <div className="relative w-full h-[700px] overflow-hidden rounded-lg mx-auto max-w-7xl"> {/* Increased height and max-width */}
+    {carouselImages.map((image, index) => (
+      <motion.div
+        key={index}
+        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+          index === currentSlide ? 'opacity-100' : 'opacity-0'
+        }`}
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: index === currentSlide ? 1 : 0,
+          scale: index === currentSlide ? 1 : 0.9
+        }}
+        transition={{ duration: 1 }}
+      >
+        <img 
+          src={image.src} 
+          alt={image.header} 
+          className="w-full h-full object-cover rounded-lg" // Using object-cover for full container coverage
+        />
+        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-4">
+          <h3 className="text-2xl font-bold">{image.header}</h3>
         </div>
-        <div className="flex justify-center mt-4">
-          {carouselImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 w-2 rounded-full mx-1 ${
-                index === currentSlide 
-                  ? 'bg-yellow-400' 
-                  : 'bg-gray-400'
-              }`}
-            />
-          ))}
-        </div>
-      </section>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
+
 
       {/* Our Expertise Section */}
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-lg">
-        <h2 className="text-4xl font-semibold text-yellow-400 mb-6">Our Expertise</h2>
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-          <div className="service-item text-center">
-            <FaCode className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">Custom Software Development</p>
-          </div>
-          <div className="service-item text-center">
-            <FaMobileAlt className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">
-              Web & Mobile App Development
-            </p>
-          </div>
-          <div className="service-item text-center">
-            <FaRobot className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">AI & Machine Learning</p>
-          </div>
-          <div className="service-item text-center">
-            <FaCloud className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">Cloud Computing</p>
-          </div>
-          <div className="service-item text-center">
-            <FaLock className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">Cybersecurity</p>
-          </div>
-        </div>
-      </section>
+  <h2 className="text-4xl font-semibold text-yellow-400 mb-6">Our Expertise</h2>
+  <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+    <div className="service-item text-center">
+      <FaCloud className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Cloud Computing & DevOps</p>
+    </div>
+    <div className="service-item text-center">
+      <FaMobileAlt className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Web & Mobile App Development</p>
+    </div>
+    <div className="service-item text-center">
+      <FaCode className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Custom Software Development</p>
+    </div>
+    <div className="service-item text-center">
+      <FaRobot className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">AI & ML</p>
+    </div>
+    <div className="service-item text-center">
+      <FaLock className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Cybersecurity</p>
+    </div>
+    <div className="service-item text-center">
+      <FaChartLine className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">ERP & CRM</p>
+    </div>
+    <div className="service-item text-center">
+      <FaJira className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Atlassian Solutions</p>
+    </div>
+    <div className="service-item text-center">
+      <FaBullhorn className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Digital Marketing</p>
+    </div>
+    <div className="service-item text-center">
+      <FaBrain className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Generative AI</p>
+    </div>
+  </div>
+</section>
 
       {/* Get in Touch Section */}
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl">
