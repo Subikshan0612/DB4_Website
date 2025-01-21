@@ -150,10 +150,10 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 const Navbar = () => {
-  const [opacity, setOpacity] = useState(1); // State for controlling opacity
+  const [opacity, setOpacity] = useState(1);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Floating and tilting animation
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
     tl.to(".navbar", {
       y: "+=10",
@@ -174,12 +174,11 @@ const Navbar = () => {
         ease: "sine.inOut",
       });
 
-    // Scroll-based opacity effect with a minimum limit
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const maxScroll = 300; // Max scroll distance for reducing opacity
-      const minOpacity = 0.3; // Minimum opacity value
-      const newOpacity = Math.max(1 - scrollTop / maxScroll, minOpacity); // Ensures opacity never goes below minOpacity
+      const maxScroll = 300;
+      const minOpacity = 0.3;
+      const newOpacity = Math.max(1 - scrollTop / maxScroll, minOpacity);
       setOpacity(newOpacity);
     };
 
@@ -238,4 +237,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
+ 
