@@ -192,54 +192,63 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About Us Section */}
+    
+
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl">
-        <motion.h2
-          className="text-4xl font-semibold text-yellow-400 mb-6"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          About Us
-        </motion.h2>
-        <motion.p
-          className="text-lg text-gray-200 mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          At DB4Cloud Technologies, we specialize in delivering custom software
-          and technological solutions that transform businesses. With a passionate
-          team of experts, we prioritize client satisfaction and innovation. We
-          help businesses scale, optimize their operations, and leverage cutting-edge
-          technologies such as AI, Cloud, and IoT.
-        </motion.p>
+  <div className="flex flex-row items-center justify-between">
+    {/* Left side content */}
+    <div className="w-1/2 pr-8">
+      <motion.h2
+        className="text-4xl font-semibold text-yellow-400 mb-6"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        About Us
+      </motion.h2>
+      
+      <motion.p
+        className="text-lg text-gray-200 mb-6"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        At DB4Cloud Technologies, we specialize in delivering custom software
+        and technological solutions that transform businesses. With a passionate
+        team of experts, we prioritize client satisfaction and innovation. We
+        help businesses scale, optimize their operations, and leverage cutting-edge
+        technologies such as AI, Cloud, and IoT.
+      </motion.p>
 
-        <motion.p
-          className="text-lg text-gray-200 mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          With over a decade of experience, our team has successfully helped numerous
-          clients across various industries achieve their digital transformation goals.
-          Whether you're a startup or an established enterprise, our solutions are designed
-          to meet your unique needs and drive your business forward.
-        </motion.p>
+      <motion.p
+        className="text-lg text-gray-200 mb-6"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        With over a decade of experience, our team has successfully helped numerous
+        clients across various industries achieve their digital transformation goals.
+        Whether you're a startup or an established enterprise, our solutions are designed
+        to meet your unique needs and drive your business forward.
+      </motion.p>
+    </div>
 
-        <motion.div
-          className="mt-6 flex justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <img
-            src={stockImage}
-            alt="About Us"
-            className="rounded-lg shadow-2xl border-4 border-yellow-500 w-1/2"
-          />
-        </motion.div>
-      </section>
+    {/* Right side image */}
+    <motion.div
+      className="w-1/2"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 1.5 }}
+    >
+      <img
+        src={stockImage}
+        alt="About Us"
+        className="rounded-lg shadow-2xl border-4 border-yellow-500 w-full h-full object-cover"
+      />
+    </motion.div>
+  </div>
+</section>
+
 
       {/* NEW: Image Carousel Section */}
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl overflow-hidden">

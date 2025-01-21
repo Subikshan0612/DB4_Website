@@ -6,16 +6,15 @@ import Contact from "./components/Contact";
 import Industries from "./components/Industries";
 import Services from "./components/Services";
 import Careers from "./components/Careers";
-import Logo from "./components/Logo"; // Import the Logo component
-import Footer from "./components/Footer"; // Import Footer component
-import './App.css'; // Import the updated CSS
-
+import Logo from "./components/Logo"; 
+import Footer from "./components/Footer"; 
+import './App.css'; 
+ 
 const App = () => {
   return (
     <Router>
       <div className="App">
-        {/* Add the logo outside the Navbar */}
-        <Logo />
+         <Logo />
         <Navbar />
         <div className="App-content">
           <Routes>
@@ -27,12 +26,11 @@ const App = () => {
           </Routes>
         </div>
         <div className="App-footer">
-        {/* Add Footer component */}
         <Footer />
         </div>
       </div>
     </Router>
   );
 };
-
+ 
 export default App;

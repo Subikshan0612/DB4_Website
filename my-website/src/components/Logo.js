@@ -1,65 +1,60 @@
+
+
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 
 const Logo = () => {
-  const [scrollDirection, setScrollDirection] = useState("up"); // Track scroll direction
+  const [scrollDirection, setScrollDirection] = useState("up");
 
   useEffect(() => {
-    let lastScrollY = window.scrollY; // Keep track of the last scroll position
+    let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Determine the scroll direction
-      if (currentScrollY > lastScrollY) {
-        setScrollDirection("down");
-      } else {
-        setScrollDirection("up");
-      }
-
+      setScrollDirection(currentScrollY > lastScrollY ? "down" : "up");
       lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Animate the logo based on scroll direction
-    if (scrollDirection === "down") {
-      gsap.to(".floating-logo", {
-        y: -100, // Move up
-        opacity: 0, // Fade out
-        duration: 0.5,
-        ease: "power1.out",
-      });
-    } else if (scrollDirection === "up") {
-      gsap.to(".floating-logo", {
-        y: 0, // Reset position
-        opacity: 1, // Fade in
-        duration: 0.5,
-        ease: "power1.out",
-      });
-    }
+    const animationConfig = {
+      y: scrollDirection === "down" ? -100 : 0,
+      opacity: scrollDirection === "down" ? 0 : 1,
+      duration: 0.5,
+      ease: "power1.out",
+    };
+    gsap.to(".floating-logo", animationConfig);
   }, [scrollDirection]);
 
   return (
     <motion.div
-    // In the Logo component, update the className of the motion.div:
-className="floating-logo fixed top-0 left-12 w-48 h-48 md:w-56 md:h-56 z-40"
-
-      // className="floating-logo fixed top-0 left-12 w-48 h-48 md:w-56 md:h-56 z-50" // Moved logo further up
-      whileHover={{ scale: 1.2 }} // Hover scaling effect
+      className="floating-logo fixed top-2 left-2 sm:top-4 sm:left-8 z-50 text-red-700"
+      whileHover={{ scale: 1.1 }}
     >
-      <img
-        src="https://res.cloudinary.com/dplqjwnoc/image/upload/v1732529563/DB4cloud_compny_logo_riybya.png" // Replace with your logo path
-        alt="Company Logo"
-        className="w-full h-full object-contain"
-      />
+      <a
+        href="/"
+        className="flex flex-col items-center justify-center 
+          h-16 w-40 
+          sm:h-20 sm:w-48 
+          md:h-24 md:w-56 
+          lg:h-28 lg:w-64 
+          text-center font-bold font-wild rounded-lg shadow-lg 
+          backdrop-blur-sm"
+      >
+        <span className="text-primary-500 text-xs sm:text-sm md:text-base lg:text-lg">
+          Db4Cloud
+        </span>
+        <span className="text-primary-700 text-xs sm:text-sm md:text-base lg:text-lg">
+          Technologies Pvt Ltd
+        </span>
+      </a>
     </motion.div>
   );
 };
 
 export default Logo;
+
