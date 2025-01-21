@@ -158,7 +158,7 @@ const Contact = () => {
                       <Field
                         type="text"
                         name="phone"
-                        placeholder="Phone Number"
+                        placeholder="   Phone Number"
                         className="border rounded-md p-3 w-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-300 pl-24"
                       />
                     </div>
