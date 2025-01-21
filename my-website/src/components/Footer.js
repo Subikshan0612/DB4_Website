@@ -1,6 +1,200 @@
+// import React, { useEffect, useRef } from "react";
+// import { motion } from "framer-motion";
+// import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
+// import gsap from "gsap";
+
+// const Footer = () => {
+//   const footerRef = useRef(null);
+//   const titleRef = useRef(null);
+//   const socialIconsRef = useRef(null);
+
+//   useEffect(() => {
+//     // GSAP animations for footer appearance
+//     gsap.fromTo(
+//       footerRef.current,
+//       { opacity: 0, y: 50 },
+//       { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }
+//     );
+
+//     gsap.fromTo(
+//       titleRef.current,
+//       { opacity: 0, scale: 0.8 },
+//       { opacity: 1, scale: 1, duration: 1.5, delay: 0.5, ease: "back.out(1.7)" }
+//     );
+
+//     gsap.fromTo(
+//       socialIconsRef.current,
+//       { opacity: 0, scale: 0.8 },
+//       { opacity: 1, scale: 1, duration: 1.2, delay: 0.8, ease: "power2.out" }
+//     );
+//   }, []);
+
+//   return (
+//     <motion.footer
+//       ref={footerRef}
+//       className="bg-black text-white py-16"
+//       initial={{ opacity: 0, y: 50 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 1.5, ease: "easeOut" }}
+//     >
+//       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+//         {/* Left Section - Company Info */}
+//         <div>
+//           <h2
+//             className="text-4xl font-semibold mb-4 text-red-600"
+//             ref={titleRef}
+//           >
+//             Db4Cloud Technologies
+//           </h2>
+//           <p className="text-gray-400 text-sm mb-6">
+//             Db4Cloud Technologies IT Services is the leader in the IT field,
+//             working on offshore products and outsourcing software development.
+//           </p>
+//           <div>
+//             <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+//               Follow Us
+//             </h4>
+//             <div
+//               ref={socialIconsRef}
+//               className="flex justify-center md:justify-start space-x-4 text-2xl"
+//             >
+//               <a
+//                 href="https://www.instagram.com/db4cloudtechnologies/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 <FaInstagram />
+//               </a>
+//               <a
+//                 href="https://x.com/DB4Cloud"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 <FaTwitter />
+//               </a>
+//               <a
+//                 href="https://www.linkedin.com/company/103363660/admin/dashboard/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 <FaLinkedin />
+//               </a>
+//               <a
+//                 href="https://www.facebook.com/people/Db4Cloud-Technologies-Pvt-Ltd/61563263484445/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 <FaFacebook />
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Second Column - Useful Links */}
+//         <div>
+//           <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+//             Useful Links
+//           </h4>
+//           <ul className="space-y-2">
+//             <li>
+//               <a
+//                 href="/"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 Home
+//               </a>
+//             </li>
+//             <li>
+//               <a
+//                 href="/industries"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 Industries
+//               </a>
+//             </li>
+//             <li>
+//               <a
+//                 href="/services"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 Services
+//               </a>
+//             </li>
+//             {/* <li>
+//               <a
+//                 href="/blog"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 Blog
+//               </a>
+//             </li> */}
+//             <li>
+//               <a
+//                 href="/careers"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 Careers
+//               </a>
+//             </li>
+//             <li>
+//               <a
+//                 href="/contact"
+//                 className="hover:text-yellow-300 transition duration-300"
+//               >
+//                 Contact
+//               </a>
+//             </li>
+//           </ul>
+//         </div>
+
+//         {/* Third Column - Industries */}
+//         <div>
+//           <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+//             Industries
+//           </h4>
+//           <ul className="space-y-2">
+//             <li>Education</li>
+//             <li>Finance</li>
+//             <li>Retail</li>
+//             <li>Automotive</li>
+//             <li>Manufacturing</li>
+//             <li>Aerospace</li>
+//           </ul>
+//         </div>
+
+//         {/* Fourth Column - Services */}
+//         <div>
+//           <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+//             Services
+//           </h4>
+//           <ul className="space-y-2">
+//             <li>Atlassian Services</li>
+//             <li>AWS and Azure Migration</li>
+//             <li>DevOps Solutions</li>
+//             <li>Cloud Management</li>
+//             <li>Salesforce Services</li>
+//             <li>Snowflake Services</li>
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* Bottom Section */}
+//       <div className="mt-12 text-center text-sm text-gray-400">
+//         ©2024 Db4Cloud. All Rights Reserved.
+//       </div>
+//     </motion.footer>
+//   );
+// };
+
+// export default Footer;
+
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaXTwitter, FaLinkedin, FaFacebook , FaYoutube } from "react-icons/fa6";
 import gsap from "gsap";
 
 const Footer = () => {
@@ -9,7 +203,6 @@ const Footer = () => {
   const socialIconsRef = useRef(null);
 
   useEffect(() => {
-    // GSAP animations for footer appearance
     gsap.fromTo(
       footerRef.current,
       { opacity: 0, y: 50 },
@@ -37,26 +230,23 @@ const Footer = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5, ease: "easeOut" }}
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-        {/* Left Section - Company Info */}
-        <div>
+      <div className="container mx-auto">
+        {/* Top Section - Company Name and Follow Us */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-8">
           <h2
-            className="text-4xl font-semibold mb-4 text-red-600"
+            className="text-4xl font-semibold mb-4 md:mb-0 text-red-600"
             ref={titleRef}
           >
             Db4Cloud Technologies
           </h2>
-          <p className="text-gray-400 text-sm mb-6">
-            Db4Cloud Technologies IT Services is the leader in the IT field,
-            working on offshore products and outsourcing software development.
-          </p>
-          <div>
+          
+          <div className="text-center md:text-right">
             <h4 className="text-xl font-semibold text-yellow-300 mb-2">
               Follow Us
             </h4>
             <div
               ref={socialIconsRef}
-              className="flex justify-center md:justify-start space-x-4 text-2xl"
+              className="flex space-x-4 text-2xl"
             >
               <a
                 href="https://www.instagram.com/db4cloudtechnologies/"
@@ -72,7 +262,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-yellow-300 transition duration-300"
               >
-                <FaTwitter />
+                <FaXTwitter />
               </a>
               <a
                 href="https://www.linkedin.com/company/103363660/admin/dashboard/"
@@ -90,101 +280,116 @@ const Footer = () => {
               >
                 <FaFacebook />
               </a>
+              <a
+               href="https://www.youtube.com/channel/UCvhr4y0CQY8C2-B8xcB9X6w"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="hover:text-yellow-300 transition duration-300"
+              >
+                <FaYoutube />
+              </a>
+
             </div>
           </div>
         </div>
 
-        {/* Second Column - Useful Links */}
-        <div>
-          <h4 className="text-xl font-semibold text-yellow-300 mb-2">
-            Useful Links
-          </h4>
-          <ul className="space-y-2">
-            <li>
-              <a
-                href="/"
-                className="hover:text-yellow-300 transition duration-300"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/industries"
-                className="hover:text-yellow-300 transition duration-300"
-              >
-                Industries
-              </a>
-            </li>
-            <li>
-              <a
-                href="/services"
-                className="hover:text-yellow-300 transition duration-300"
-              >
-                Services
-              </a>
-            </li>
-            {/* <li>
-              <a
-                href="/blog"
-                className="hover:text-yellow-300 transition duration-300"
-              >
-                Blog
-              </a>
-            </li> */}
-            <li>
-              <a
-                href="/careers"
-                className="hover:text-yellow-300 transition duration-300"
-              >
-                Careers
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="hover:text-yellow-300 transition duration-300"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+        {/* Yellow Divider Line */}
+        <div className="border-b-2 border-yellow-300 mb-8"></div>
+
+        {/* Content Below Yellow Line */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+          {/* Company Description */}
+          <div>
+            <p className="text-gray-400 text-sm mb-6">
+              Db4Cloud Technologies IT Services is the leader in the IT field,
+              working on offshore products and outsourcing software development.
+            </p>
+          </div>
+
+          {/* Useful Links Section */}
+          <div>
+            <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+              Useful Links
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="/"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/industries"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
+                  Industries
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/careers"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  className="hover:text-yellow-300 transition duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Industries Section */}
+          <div>
+            <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+              Industries
+            </h4>
+            <ul className="space-y-2">
+              <li>Education</li>
+              <li>Finance</li>
+              <li>Retail</li>
+              <li>Automotive</li>
+              <li>Manufacturing</li>
+              <li>Aerospace</li>
+            </ul>
+          </div>
+
+          {/* Services Section */}
+          <div>
+            <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+              Services
+            </h4>
+            <ul className="space-y-2">
+              <li>Atlassian Services</li>
+              <li>AWS and Azure Migration</li>
+              <li>DevOps Solutions</li>
+              <li>Cloud Management</li>
+              <li>Salesforce Services</li>
+              <li>Snowflake Services</li>
+            </ul>
+          </div>
         </div>
 
-        {/* Third Column - Industries */}
-        <div>
-          <h4 className="text-xl font-semibold text-yellow-300 mb-2">
-            Industries
-          </h4>
-          <ul className="space-y-2">
-            <li>Education</li>
-            <li>Finance</li>
-            <li>Retail</li>
-            <li>Automotive</li>
-            <li>Manufacturing</li>
-            <li>Aerospace</li>
-          </ul>
+        {/* Copyright Section */}
+        <div className="mt-12 text-center text-sm text-gray-400">
+          ©2025 Db4Cloud. All Rights Reserved.
         </div>
-
-        {/* Fourth Column - Services */}
-        <div>
-          <h4 className="text-xl font-semibold text-yellow-300 mb-2">
-            Services
-          </h4>
-          <ul className="space-y-2">
-            <li>Atlassian Services</li>
-            <li>AWS and Azure Migration</li>
-            <li>DevOps Solutions</li>
-            <li>Cloud Management</li>
-            <li>Salesforce Services</li>
-            <li>Snowflake Services</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom Section */}
-      <div className="mt-12 text-center text-sm text-gray-400">
-        ©2024 Db4Cloud. All Rights Reserved.
       </div>
     </motion.footer>
   );
