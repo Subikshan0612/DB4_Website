@@ -301,43 +301,41 @@ const Home = () => {
           ))}
         </div>
       </section> */}
-
-<section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl overflow-hidden">
-  <motion.h2
-    className="text-4xl font-semibold text-yellow-400 mb-6 text-center"
-    initial={{ opacity: 0, y: -50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-  >
-    Our Journey
-  </motion.h2>
-  <div className="relative w-full h-[700px] overflow-hidden rounded-lg mx-auto max-w-7xl"> {/* Increased height and max-width */}
-    {carouselImages.map((image, index) => (
-      <motion.div
-        key={index}
-        className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-          index === currentSlide ? 'opacity-100' : 'opacity-0'
-        }`}
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: index === currentSlide ? 1 : 0,
-          scale: index === currentSlide ? 1 : 0.9
-        }}
-        transition={{ duration: 1 }}
-      >
-        <img 
-          src={image.src} 
-          alt={image.header} 
-          className="w-full h-full object-cover rounded-lg" // Using object-cover for full container coverage
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-4">
-          <h3 className="text-2xl font-bold">{image.header}</h3>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
-
+  <section className="section fade-in mt-0 px-2 sm:px-4 md:px-6 bg-gradient-to-r from-purple-900 via-black to-black p-4 sm:p-6 md:p-8 rounded-lg shadow-xl overflow-hidden">
+    <motion.h2
+      className="text-2xl sm:text-3xl md:text-4xl font-semibold text-yellow-400 mb-4 sm:mb-6 text-center"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      Our Journey
+    </motion.h2>
+    <div className="relative w-full h-[300px] sm:h-[500px] md:h-[700px] overflow-hidden rounded-lg mx-auto max-w-7xl"> 
+      {carouselImages.map((image, index) => (
+        <motion.div
+          key={index}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: index === currentSlide ? 1 : 0,
+            scale: index === currentSlide ? 1 : 0.9
+          }}
+          transition={{ duration: 1 }}
+        >
+          <img 
+            src={image.src} 
+            alt={image.header} 
+            className="w-full h-full object-cover rounded-lg"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-2 sm:p-3 md:p-4">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold">{image.header}</h3>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </section>
 
 
 
