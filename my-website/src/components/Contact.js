@@ -216,7 +216,7 @@ const Contact = () => {
                 <li className="office-card p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
                   <div className="flex items-center">
                     <FaMapMarkerAlt className="text-xl text-yellow-400 mr-3" />
-                    <span className="text-lg text-gray-200">Chittor, Andhra Pradesh, India</span>
+                    <span className="text-lg text-gray-200">Chittoor, Andhra Pradesh, India</span>
                   </div>
                 </li>
               </motion.ul>
@@ -257,7 +257,7 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >          
-          <div className="bg-gray-900 p-6 rounded-xl shadow-xl">
+          <div className="bg-gray-900 p-6 rounded-xl shadow-xl mb-6">
             <div className="text-center mb-2">
               <FaEnvelope className="text-2xl text-yellow-400 mx-auto" />
             </div>
