@@ -1,33 +1,33 @@
- import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaXTwitter, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa6";
 import gsap from "gsap";
-
+ 
 const Footer = () => {
   const footerRef = useRef(null);
   const titleRef = useRef(null);
   const socialIconsRef = useRef(null);
-
+ 
   useEffect(() => {
     gsap.fromTo(
       footerRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }
     );
-
+ 
     gsap.fromTo(
       titleRef.current,
       { opacity: 0, scale: 0.8 },
       { opacity: 1, scale: 1, duration: 1.5, delay: 0.5, ease: "back.out(1.7)" }
     );
-
+ 
     gsap.fromTo(
       socialIconsRef.current,
       { opacity: 0, scale: 0.8 },
       { opacity: 1, scale: 1, duration: 1.2, delay: 0.8, ease: "power2.out" }
     );
   }, []);
-
+ 
   return (
     <motion.footer
       ref={footerRef}
@@ -38,7 +38,7 @@ const Footer = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-1">
-          
+         
         <a
         href="/"
         className="flex flex-col items-center justify-center
@@ -54,20 +54,20 @@ const Footer = () => {
         >
           Db4Cloud
         </span>
-        <span 
+        <span
         style={{ color: "rgb(245, 7, 7)" }}
         className="text-primary-700 text-xs sm:text-sm md:text-base lg:text-lg">
           Technologies Pvt Ltd
         </span>
       </a>
-          
-          
-          
-          
+         
+         
+         
+         
           {/* <h2 className="text-2xl font-semibold mb-3 md:mb-0 text-red-600" ref={titleRef}>
             Db4Cloud Technologies
           </h2> */}
-          
+         
           <div className="text-center md:text-right">
             <h4 className="text-lg font-semibold text-yellow-300 mb-1">Follow Us</h4>
             <div ref={socialIconsRef} className="flex space-x-4 text-xl">
@@ -89,9 +89,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+ 
         <div className="border-b border-yellow-300 mb-3"></div>
-
+ 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left text-sm">
           <div>
             <p className="text-gray-400 mb-4">
@@ -99,7 +99,7 @@ const Footer = () => {
               working on offshore products and outsourcing software development.
             </p>
           </div>
-
+ 
           <div>
             <h4 className="text-lg font-semibold text-yellow-300 mb-2">Useful Links</h4>
             <ul className="space-y-1">
@@ -110,7 +110,7 @@ const Footer = () => {
               <li><a href="/contact" className="hover:text-yellow-300 transition duration-300">Contact</a></li>
             </ul>
           </div>
-
+ 
           <div>
             <h4 className="text-lg font-semibold text-yellow-300 mb-2">Industries</h4>
             <ul className="space-y-1">
@@ -121,7 +121,7 @@ const Footer = () => {
               <li>Manufacturing</li>
             </ul>
           </div>
-
+ 
           <div>
             <h4 className="text-lg font-semibold text-yellow-300 mb-2">Services</h4>
             <ul className="space-y-1">
@@ -133,7 +133,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
+ 
         <div className="mt-6 text-center text-xs text-gray-400">
           ©2025 Db4Cloud. All Rights Reserved.
         </div>
@@ -141,7 +141,5 @@ const Footer = () => {
     </motion.footer>
   );
 };
-
+ 
 export default Footer;
-
-

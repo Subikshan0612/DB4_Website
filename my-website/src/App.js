@@ -28,7 +28,6 @@ const App = () => {
         </div>
         <div className="App-footer">
         {/* Add Footer component */}
-        ` zxcvbnm,./`
         <Footer />
         </div>
       </div>
