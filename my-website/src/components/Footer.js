@@ -35,6 +35,11 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5, ease: "easeOut" }}
+      style={{
+        fontSize: "12px", // Smaller default font size
+        minHeight: "50px", // Reduced height for footer
+        width: "100%", // Full width
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-1">
