@@ -390,6 +390,26 @@ const Footer = () => {
         <div className="mt-12 text-center text-sm text-gray-400">
           ©2025 Db4Cloud. All Rights Reserved.
         </div>
+
+        {/* Fourth Column - Services */}
+        <div>
+          <h4 className="text-xl font-semibold text-yellow-300 mb-2">
+            Services
+          </h4>
+          <ul className="space-y-2">
+            <li>Atlassian Services</li>
+            <li>AWS and Azure Migration</li>
+            <li>DevOps Solutions</li>
+            <li>Cloud Management</li>
+            <li>Salesforce Services</li>
+            <li>Snowflake Services</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="mt-12 text-center text-sm text-gray-400">
+        ©2025 Db4Cloud. All Rights Reserved.
       </div>
     </motion.footer>
   );
