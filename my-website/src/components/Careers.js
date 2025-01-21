@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaLaptopCode, FaDatabase, FaPen, FaUsers, FaEnvelope } from "react-icons/fa";
+import { FaBriefcase, FaLaptopCode, FaDatabase, FaPen, FaUsers, FaEnvelope, FaGraduationCap } from "react-icons/fa";
 
 const Careers = () => {
   useEffect(() => {
@@ -62,6 +62,13 @@ const Careers = () => {
       location: "Chennai & Hyderabad",
       icon: <FaUsers className="text-6xl text-yellow-300" />,
     },
+    {
+      title: "Technology Internship Program",
+      description: "Exciting opportunity to gain hands-on experience in Software Development, DevOps practices, AWS Cloud Services, and Microsoft Azure. Get industry-recognized certifications while working on real-world projects. Our structured program includes mentorship from industry experts and comprehensive training in modern development practices.",
+      location: "Chennai & Hyderabad",
+      icon: <FaGraduationCap className="text-6xl text-yellow-300" />,
+    },
+    
   ];
 
   const hoverEffect = {
