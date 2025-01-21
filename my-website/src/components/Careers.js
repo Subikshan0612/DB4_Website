@@ -35,31 +35,31 @@ const Careers = () => {
     {
       title: "Frontend Developer",
       description: "Join our team to build engaging and interactive user interfaces.",
-      location: "Remote",
+      location: "Chennai & Hyderabad",
       icon: <FaLaptopCode className="text-6xl text-yellow-300" />,
     },
     {
       title: "Backend Developer",
       description: "We are looking for an experienced backend developer to build scalable server-side applications.",
-      location: "New York, USA",
+      location: "Chennai & Hyderabad",
       icon: <FaDatabase className="text-6xl text-yellow-300" />,
     },
     {
       title: "Full Stack Developer",
       description: "Looking for an all-rounder to work on both frontend and backend of web applications.",
-      location: "Remote",
+      location: "Chennai & Hyderabad",
       icon: <FaBriefcase className="text-6xl text-yellow-300" />,
     },
     {
       title: "UI/UX Designer",
       description: "We need a creative UI/UX designer to design user-friendly interfaces and enhance the user experience.",
-      location: "Los Angeles, USA",
+      location: "Chennai & Hyderabad",
       icon: <FaPen className="text-6xl text-yellow-300" />,
     },
     {
       title: "Product Manager",
       description: "Seeking a proactive product manager to oversee the development of innovative products from concept to launch.",
-      location: "London, UK",
+      location: "Chennai & Hyderabad",
       icon: <FaUsers className="text-6xl text-yellow-300" />,
     },
   ];

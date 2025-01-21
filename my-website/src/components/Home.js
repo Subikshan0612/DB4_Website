@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import stockImage from "../assets/stock1.jpg";
-import { FaCode, FaCloud, FaLock, FaMobileAlt, FaRobot } from "react-icons/fa";
+import { FaCode, FaCloud, FaLock, FaMobileAlt, FaRobot, FaChartLine, FaJira, FaBullhorn, FaBrain } from "react-icons/fa";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -15,23 +15,23 @@ const Home = () => {
 
   const carouselImages = [
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536717/1_eohu8p.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737436780/cloud-computing-2001090_pexu86.jpg", 
       header: "Cloud Innovation" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732537028/12_yp59g5.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737437153/digital-marketing-1725340_derbba.jpg", 
       header: "Digital Transformation" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536821/4_o6dlob.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737436793/ai-generated-8540913_uzparo.jpg", 
       header: "AI Solutions" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536844/5_swhlwx.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737436762/technology-8760347_n8gk0j.jpg", 
       header: "Secure Infrastructure" 
     },
     { 
-      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1732536950/9_faoxfd.jpg", 
+      src: "https://res.cloudinary.com/dplqjwnoc/image/upload/v1737437063/startup-594090_l2km65.jpg", 
       header: "Business Optimization" 
     }
   ];
@@ -165,7 +165,7 @@ const Home = () => {
       <div className="relative bg-gradient-to-r from-purple-900 via-black to-black">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover opacity-70"
-          src="https://res.cloudinary.com/dplqjwnoc/video/upload/v1732791324/215500_medium_bajue7.mp4"
+          src="https://res.cloudinary.com/dplqjwnoc/video/upload/v1737441680/95126-645704295_xactnk.mp4"
           autoPlay
           loop
           muted
@@ -192,57 +192,68 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About Us Section */}
+    
+
+
+
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl">
-        <motion.h2
-          className="text-4xl font-semibold text-yellow-400 mb-6"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          About Us
-        </motion.h2>
-        <motion.p
-          className="text-lg text-gray-200 mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          At DB4Cloud Technologies, we specialize in delivering custom software
-          and technological solutions that transform businesses. With a passionate
-          team of experts, we prioritize client satisfaction and innovation. We
-          help businesses scale, optimize their operations, and leverage cutting-edge
-          technologies such as AI, Cloud, and IoT.
-        </motion.p>
+  <div className="flex flex-col md:flex-row items-center justify-between">
+    {/* Left side content */}
+    <div className="w-full md:w-1/2 md:pr-8 mb-6 md:mb-0">
+      <motion.h2
+        className="text-4xl font-semibold text-yellow-400 mb-6 text-center md:text-left"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        About Us
+      </motion.h2>
 
-        <motion.p
-          className="text-lg text-gray-200 mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          With over a decade of experience, our team has successfully helped numerous
-          clients across various industries achieve their digital transformation goals.
-          Whether you're a startup or an established enterprise, our solutions are designed
-          to meet your unique needs and drive your business forward.
-        </motion.p>
+      <motion.p
+        className="text-lg text-gray-200 mb-6 text-center md:text-left"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        At DB4Cloud Technologies, we specialize in delivering custom software
+        and technological solutions that transform businesses. With a passionate
+        team of experts, we prioritize client satisfaction and innovation. We
+        help businesses scale, optimize their operations, and leverage cutting-edge
+        technologies such as AI, Cloud, and IoT.
+      </motion.p>
 
-        <motion.div
-          className="mt-6 flex justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <img
-            src={stockImage}
-            alt="About Us"
-            className="rounded-lg shadow-2xl border-4 border-yellow-500 w-1/2"
-          />
-        </motion.div>
-      </section>
+      <motion.p
+        className="text-lg text-gray-200 mb-6 text-center md:text-left"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        With over a decade of experience, our team has successfully helped numerous
+        clients across various industries achieve their digital transformation goals.
+        Whether you're a startup or an established enterprise, our solutions are designed
+        to meet your unique needs and drive your business forward.
+      </motion.p>
+    </div>
+
+    {/* Right side image */}
+    <motion.div
+      className="w-full md:w-1/2"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 1.5 }}
+    >
+      <img
+        src={stockImage}
+        alt="About Us"
+        className="rounded-lg shadow-2xl border-4 border-yellow-500 w-full h-auto object-cover"
+      />
+    </motion.div>
+  </div>
+</section>
+
 
       {/* NEW: Image Carousel Section */}
-      <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl overflow-hidden">
+      {/* <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl overflow-hidden">
         <motion.h2
           className="text-4xl font-semibold text-yellow-400 mb-6 text-center"
           initial={{ opacity: 0, y: -50 }}
@@ -268,7 +279,7 @@ const Home = () => {
               <img 
                 src={image.src} 
                 alt={image.header} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-block"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-4">
                 <h3 className="text-2xl font-bold">{image.header}</h3>
@@ -289,36 +300,87 @@ const Home = () => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
+  <section className="section fade-in mt-0 px-2 sm:px-4 md:px-6 bg-gradient-to-r from-purple-900 via-black to-black p-4 sm:p-6 md:p-8 rounded-lg shadow-xl overflow-hidden">
+    <motion.h2
+      className="text-2xl sm:text-3xl md:text-4xl font-semibold text-yellow-400 mb-4 sm:mb-6 text-center"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      Our Journey
+    </motion.h2>
+    <div className="relative w-full h-[300px] sm:h-[500px] md:h-[700px] overflow-hidden rounded-lg mx-auto max-w-7xl"> 
+      {carouselImages.map((image, index) => (
+        <motion.div
+          key={index}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: index === currentSlide ? 1 : 0,
+            scale: index === currentSlide ? 1 : 0.9
+          }}
+          transition={{ duration: 1 }}
+        >
+          <img 
+            src={image.src} 
+            alt={image.header} 
+            className="w-full h-full object-cover rounded-lg"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-2 sm:p-3 md:p-4">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold">{image.header}</h3>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </section>
+
+
 
       {/* Our Expertise Section */}
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-lg">
-        <h2 className="text-4xl font-semibold text-yellow-400 mb-6">Our Expertise</h2>
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-          <div className="service-item text-center">
-            <FaCode className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">Custom Software Development</p>
-          </div>
-          <div className="service-item text-center">
-            <FaMobileAlt className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">
-              Web & Mobile App Development
-            </p>
-          </div>
-          <div className="service-item text-center">
-            <FaRobot className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">AI & Machine Learning</p>
-          </div>
-          <div className="service-item text-center">
-            <FaCloud className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">Cloud Computing</p>
-          </div>
-          <div className="service-item text-center">
-            <FaLock className="icon text-yellow-300 text-6xl mx-auto mb-4" />
-            <p className="text-lg text-gray-200">Cybersecurity</p>
-          </div>
-        </div>
-      </section>
+  <h2 className="text-4xl font-semibold text-yellow-400 mb-6">Our Expertise</h2>
+  <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+    <div className="service-item text-center">
+      <FaCloud className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Cloud Computing & DevOps</p>
+    </div>
+    <div className="service-item text-center">
+      <FaMobileAlt className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Web & Mobile App Development</p>
+    </div>
+    <div className="service-item text-center">
+      <FaCode className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Custom Software Development</p>
+    </div>
+    <div className="service-item text-center">
+      <FaRobot className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">AI & ML</p>
+    </div>
+    <div className="service-item text-center">
+      <FaLock className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Cybersecurity</p>
+    </div>
+    <div className="service-item text-center">
+      <FaChartLine className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">ERP & CRM</p>
+    </div>
+    <div className="service-item text-center">
+      <FaJira className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Atlassian Solutions</p>
+    </div>
+    <div className="service-item text-center">
+      <FaBullhorn className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Digital Marketing</p>
+    </div>
+    <div className="service-item text-center">
+      <FaBrain className="icon text-yellow-300 text-6xl mx-auto mb-4" />
+      <p className="text-lg text-gray-200">Generative AI</p>
+    </div>
+  </div>
+</section>
 
       {/* Get in Touch Section */}
       <section className="section fade-in mt-0 px-6 bg-gradient-to-r from-purple-900 via-black to-black p-8 rounded-lg shadow-xl">
