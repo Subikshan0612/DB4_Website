@@ -165,7 +165,7 @@ const Home = () => {
       <div className="relative bg-gradient-to-r from-purple-900 via-black to-black">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover opacity-70"
-          src="https://res.cloudinary.com/dplqjwnoc/video/upload/v1732791324/215500_medium_bajue7.mp4"
+          src="https://res.cloudinary.com/dplqjwnoc/video/upload/v1737441680/95126-645704295_xactnk.mp4"
           autoPlay
           loop
           muted
