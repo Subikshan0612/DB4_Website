@@ -268,7 +268,7 @@ const Home = () => {
               <img 
                 src={image.src} 
                 alt={image.header} 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-block"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-4">
                 <h3 className="text-2xl font-bold">{image.header}</h3>
