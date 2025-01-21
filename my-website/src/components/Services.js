@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { FaCode, FaMobileAlt, FaCloud, FaLock, FaRobot, FaDatabase, FaDesktop, FaPaintBrush, FaChartLine } from "react-icons/fa";
+import { 
+  FaCode, FaMobileAlt, FaCloud, FaLock, FaRobot, FaDatabase, 
+  FaDesktop, FaPaintBrush, FaChartLine, FaCogs, FaCalendarAlt, 
+  FaBullhorn, FaBrain, FaSnowflake, FaUsers, FaBolt 
+} from "react-icons/fa";
 
 const Services = () => {
   useEffect(() => {
@@ -79,6 +83,41 @@ const Services = () => {
       description: "We help enterprises scale their operations with enterprise-grade software solutions.",
       icon: <FaDesktop className="text-6xl text-yellow-300" />,
     },
+    {
+      title: "DevOps Solutions",
+      description: "Streamline your development and operations with automated pipelines, continuous integration, and deployment strategies.",
+      icon: <FaCogs className="text-6xl text-yellow-300" />,
+    },
+    {
+      title: "Workday Implementation",
+      description: "Expert consulting and implementation of Workday HCM, Financial Management, and Analytics solutions.",
+      icon: <FaCalendarAlt className="text-6xl text-yellow-300" />,
+    },
+    {
+      title: "Digital Marketing Services",
+      description: "Comprehensive digital marketing strategies to boost your online presence and drive business growth.",
+      icon: <FaBullhorn className="text-6xl text-yellow-300" />,
+    },
+    {
+      title: "Generative AI Solutions",
+      description: "Cutting-edge AI solutions for content generation, image processing, and intelligent automation.",
+      icon: <FaBrain className="text-6xl text-yellow-300" />,
+    },
+    {
+      title: "Snowflake Services",
+      description: "Data warehousing, analytics, and cloud data solutions using Snowflake's powerful platform.",
+      icon: <FaSnowflake className="text-6xl text-yellow-300" />,
+    },
+    {
+      title: "ERP & CRM Solutions",
+      description: "Integrated enterprise resource planning and customer relationship management systems for business efficiency.",
+      icon: <FaUsers className="text-6xl text-yellow-300" />,
+    },
+    {
+      title: "Salesforce Solutions",
+      description: "Custom Salesforce implementation, integration, and optimization to maximize your CRM potential.",
+      icon: <FaBolt className="text-6xl text-yellow-300" />,
+    }
   ];
 
   // Framer Motion hover and tap effects

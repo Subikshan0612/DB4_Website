@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
+
+ 
  
 const Navbar = () => {
   const [opacity, setOpacity] = useState(1);
@@ -108,3 +110,4 @@ const Navbar = () => {
 };
  
 export default Navbar;
+
