@@ -199,7 +199,8 @@ const Contact = () => {
             </Formik>
           </motion.div>
 
-          {/* Location Section */}          <motion.div 
+          {/* Location Section */}          
+          <motion.div 
             className="contact-container w-full lg:w-1/2 p-10 bg-gray-900 rounded-xl shadow-2xl"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
