@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <div className="App">
         {/* Add the logo outside the Navbar */}
-        <Logo />
+         <Logo />
         <Navbar />
         <div className="App-content">
           <Routes>

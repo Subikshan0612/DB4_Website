@@ -59,7 +59,7 @@ const Footer = () => {
               className="flex justify-center md:justify-start space-x-4 text-2xl"
             >
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/db4cloudtechnologies/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-300 transition duration-300"
@@ -67,7 +67,7 @@ const Footer = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/DB4Cloud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-300 transition duration-300"
@@ -75,7 +75,7 @@ const Footer = () => {
                 <FaTwitter />
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/103363660/admin/dashboard/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-300 transition duration-300"
@@ -83,7 +83,7 @@ const Footer = () => {
                 <FaLinkedin />
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/people/Db4Cloud-Technologies-Pvt-Ltd/61563263484445/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow-300 transition duration-300"
