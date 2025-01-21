@@ -68,7 +68,7 @@ const Careers = () => {
       location: "Chennai & Hyderabad",
       icon: <FaGraduationCap className="text-6xl text-yellow-300" />,
     },
-    
+
   ];
 
   const hoverEffect = {
