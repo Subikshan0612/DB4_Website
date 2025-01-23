@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import { FaBriefcase, FaLaptopCode, FaDatabase, FaPen, FaUsers, FaEnvelope, FaGraduationCap } from "react-icons/fa";
+import {Helmet} from 'react-helmet';
 
 const Careers = () => {
   useEffect(() => {
@@ -83,6 +84,67 @@ const Careers = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-900 via-black to-black text-gray-100">
+      <Helmet>
+  {/* Basic Meta Tags */}
+  <title>Careers at DB4Cloud - Join Our Dynamic Tech Team</title>
+  <meta name="description" content="Explore exciting career opportunities at DB4Cloud. We're hiring Frontend, Backend, Full Stack Developers, UI/UX Designers, Product Managers and offering Technology Internships in Chennai & Hyderabad." />
+  <meta name="keywords" content="DB4Cloud careers, tech jobs, software development, internships, Chennai jobs, Hyderabad jobs, frontend developer, backend developer, full stack developer, UI/UX designer, product manager" />
+  <meta name="author" content="DB4Cloud" />
+  <link rel="canonical" href="https://db4cloud.in/careers" />
+
+  {/* Open Graph Meta Tags */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DB4Cloud" />
+  <meta property="og:title" content="Career Opportunities at DB4Cloud" />
+  <meta property="og:description" content="Join our dynamic team at DB4Cloud. We offer exciting roles in software development, design, and product management with opportunities for growth and innovation." />
+  <meta property="og:url" content="https://db4cloud.in/careers" />
+  <meta property="og:image" content="https://db4cloud.in/images/careers-banner.jpg" />
+
+  {/* Twitter Card Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DB4Cloud" />
+  <meta name="twitter:title" content="Join DB4Cloud - Career Opportunities" />
+  <meta name="twitter:description" content="Build your career with DB4Cloud. Explore roles in development, design, and product management in Chennai & Hyderabad." />
+  <meta name="twitter:image" content="https://db4cloud.in/images/careers-banner.jpg" />
+
+  {/* Additional Meta Tags */}
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="generator" content="React" />
+
+  {/* Schema.org Job Posting Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "DB4Cloud",
+        "url": "https://db4cloud.in",
+        "sameAs": [
+          "https://www.linkedin.com/company/db4cloud",
+          "https://twitter.com/DB4Cloud"
+        ],
+        "jobPosting": {
+          "@type": "JobPosting",
+          "title": "Multiple Technology Positions",
+          "description": "Various roles including Frontend, Backend, Full Stack Development, UI/UX Design, and Product Management",
+          "employmentType": "FULL_TIME",
+          "jobLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Chennai & Hyderabad",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      }
+    `}
+  </script>
+</Helmet>
+
       <div className="container mx-auto pt-28 px-4">
         <h2 className="careers-heading text-4xl font-semibold text-yellow-300 mb-12 text-center">
           Join Our Team

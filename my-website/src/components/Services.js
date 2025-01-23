@@ -7,6 +7,7 @@ import {
   FaDesktop, FaPaintBrush, FaChartLine, FaCogs, FaCalendarAlt, 
   FaBullhorn, FaBrain, FaSnowflake, FaUsers, FaBolt 
 } from "react-icons/fa";
+import {Helmet} from 'react-helmet';
 
 const Services = () => {
   useEffect(() => {
@@ -133,6 +134,102 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-900 via-black to-black text-gray-100">
+
+<Helmet>
+  {/* Basic Meta Tags */}
+  <title>Services | DB4Cloud - Custom Solutions & Digital Innovation</title>
+  <meta name="description" content="Explore DB4Cloud's comprehensive technology services including Custom Software Development, Cloud Computing, AI/ML, Cybersecurity, DevOps, Digital Marketing, and Enterprise Solutions." />
+  <meta name="keywords" content="DB4Cloud services, software development, cloud computing, AI ML, cybersecurity, DevOps, digital marketing, enterprise solutions, UI UX design, database management" />
+  <meta name="author" content="DB4Cloud" />
+  <link rel="canonical" href="https://db4cloud.in/services" />
+
+  {/* Open Graph Meta Tags */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DB4Cloud Technologies" />
+  <meta property="og:title" content="Professional Technology Services - DB4Cloud" />
+  <meta property="og:description" content="Transform your business with our cutting-edge technology services. Expert solutions in software development, cloud computing, AI/ML, and cybersecurity." />
+  <meta property="og:url" content="https://db4cloud.in/services" />
+  <meta property="og:image" content="https://db4cloud.in/images/services-banner.jpg" />
+
+  {/* Twitter Card Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DB4Cloud" />
+  <meta name="twitter:title" content="Technology Services & Solutions | DB4Cloud" />
+  <meta name="twitter:description" content="Leading provider of custom software development, cloud solutions, AI/ML services, and digital transformation." />
+  <meta name="twitter:image" content="https://db4cloud.in/images/services-banner.jpg" />
+
+  {/* Additional Meta Tags */}
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="generator" content="React" />
+
+  {/* Schema.org Service Offerings Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "Technology Services - DB4Cloud",
+        "description": "Professional technology services and solutions",
+        "provider": {
+          "@type": "Organization",
+          "name": "DB4Cloud Technologies",
+          "url": "https://db4cloud.in"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Software Development",
+                "description": "Tailor-made software solutions for business needs"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud Computing Services",
+                "description": "Scalable cloud solutions for business efficiency"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI & Machine Learning",
+                "description": "Advanced AI solutions for business innovation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cybersecurity Services",
+                "description": "Comprehensive security solutions and consulting"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "DevOps Solutions",
+                "description": "Streamlined development and operations"
+              }
+            }
+          ]
+        }
+      }
+    `}
+  </script>
+</Helmet>
+
+
+
       <div className="container mx-auto pt-28 px-4">
         {/* Heading Animation */}
         <h2 className="services-heading text-4xl font-semibold text-yellow-300 mb-12 text-center">

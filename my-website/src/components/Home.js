@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import stockImage from "../assets/stock1.jpg";
 import { FaCode, FaCloud, FaLock, FaMobileAlt, FaRobot, FaChartLine, FaJira, FaBullhorn, FaBrain } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -161,6 +162,94 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-900 via-black to-black text-gray-100">
+
+<Helmet>
+  {/* Basic Meta Tags */}
+  <title>DB4Cloud Technologies - Innovative Cloud & Software Solutions</title>
+  <meta name="description" content="DB4Cloud Technologies delivers cutting-edge cloud computing, AI/ML, custom software development, and digital transformation solutions. Transform your business with our innovative technology services." />
+  <meta name="keywords" content="DB4Cloud, cloud computing, AI ML, software development, digital transformation, DevOps, web development, mobile apps, cybersecurity, ERP solutions, Atlassian" />
+  <meta name="author" content="DB4Cloud" />
+  <link rel="canonical" href="https://db4cloud.in" />
+
+  {/* Open Graph Meta Tags */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DB4Cloud Technologies" />
+  <meta property="og:title" content="DB4Cloud - Leading Technology Solutions Provider" />
+  <meta property="og:description" content="Empowering businesses with innovative cloud solutions, AI/ML, custom software development, and digital transformation services." />
+  <meta property="og:url" content="https://db4cloud.in" />
+  <meta property="og:image" content="https://db4cloud.in/images/home-banner.jpg" />
+
+  {/* Twitter Card Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DB4Cloud" />
+  <meta name="twitter:title" content="DB4Cloud Technologies - Innovation Meets Excellence" />
+  <meta name="twitter:description" content="Your partner in digital transformation. Expert solutions in cloud computing, AI/ML, software development, and cybersecurity." />
+  <meta name="twitter:image" content="https://db4cloud.in/images/home-banner.jpg" />
+
+  {/* Additional Meta Tags */}
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="generator" content="React" />
+
+  {/* Schema.org Organization and WebSite Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "DB4Cloud Technologies",
+        "url": "https://db4cloud.in",
+        "logo": "https://db4cloud.in/images/logo.png",
+        "description": "Leading provider of cloud computing, AI/ML, and digital transformation solutions",
+        "sameAs": [
+          "https://www.linkedin.com/company/db4cloud",
+          "https://twitter.com/DB4Cloud"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "India"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "contact@db4cloud.in"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "name": "Technology Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud Computing & DevOps"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI & ML Solutions"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Software Development"
+              }
+            }
+          ]
+        }
+      }
+    `}
+  </script>
+</Helmet>
+
+
+
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-purple-900 via-black to-black">
         <video

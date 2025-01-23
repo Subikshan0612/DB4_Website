@@ -5,6 +5,7 @@ import { FaBuilding, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Helmet } from "react-helmet";
 
 const countryCodes = [
   { code: '+91', country: 'India' },
@@ -104,6 +105,83 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] bg-gradient-to-r from-purple-900 via-black to-black text-gray-100">
+
+<Helmet>
+  {/* Basic Meta Tags */}
+  <title>Contact DB4Cloud - Get in Touch With Our Team</title>
+  <meta name="description" content="Connect with DB4Cloud. Reach out to our offices in Chennai, Hyderabad, Trivandrum, and Chittoor. Contact us for business inquiries, support, or career opportunities." />
+  <meta name="keywords" content="DB4Cloud contact, DB4Cloud offices, contact form, business inquiries, tech support, Chennai office, Hyderabad office, Trivandrum office, Chittoor office" />
+  <meta name="author" content="DB4Cloud" />
+  <link rel="canonical" href="https://db4cloud.in/contact" />
+
+  {/* Open Graph Meta Tags */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DB4Cloud" />
+  <meta property="og:title" content="Contact DB4Cloud - Reach Out to Us" />
+  <meta property="og:description" content="Get in touch with DB4Cloud. Our offices in Chennai, Hyderabad, Trivandrum, and Chittoor are ready to assist you with your technology needs." />
+  <meta property="og:url" content="https://db4cloud.in/contact" />
+  <meta property="og:image" content="https://db4cloud.in/images/contact-banner.jpg" />
+
+  {/* Twitter Card Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DB4Cloud" />
+  <meta name="twitter:title" content="Contact DB4Cloud - Let's Connect" />
+  <meta name="twitter:description" content="Reach out to DB4Cloud for innovative technology solutions. Multiple office locations across India to serve you better." />
+  <meta name="twitter:image" content="https://db4cloud.in/images/contact-banner.jpg" />
+
+  {/* Additional Meta Tags */}
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="generator" content="React" />
+
+  {/* Schema.org Organization and ContactPage Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "http://schema.org",
+        "@type": "ContactPage",
+        "name": "DB4Cloud Contact Page",
+        "description": "Contact information and office locations for DB4Cloud",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "DB4Cloud",
+          "url": "https://db4cloud.in",
+          "email": "contact@db4cloud.in",
+          "address": [
+            {
+              "@type": "PostalAddress",
+              "addressLocality": "Chittoor",
+              "addressRegion": "Andhra Pradesh",
+              "addressCountry": "India"
+            },
+            {
+              "@type": "PostalAddress",
+              "addressLocality": "Chennai",
+              "addressRegion": "Tamil Nadu",
+              "addressCountry": "India"
+            },
+            {
+              "@type": "PostalAddress",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "addressCountry": "India"
+            },
+            {
+              "@type": "PostalAddress",
+              "addressLocality": "Trivandrum",
+              "addressRegion": "Kerala",
+              "addressCountry": "India"
+            }
+          ]
+        }
+      }
+    `}
+  </script>
+</Helmet>
+
+
       <div className="container mx-auto pt-24 px-4">
         <motion.h1
           className="text-4xl font-bold text-yellow-300 mb-8 text-center"

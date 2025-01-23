@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 // Industry categories with respective images
 const industries = [
@@ -160,6 +161,94 @@ const Industries = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-900 via-black to-black text-gray-100 py-16 px-4 pt-32">
+
+<Helmet>
+  {/* Basic Meta Tags */}
+  <title>Industries We Serve | DB4Cloud - Technology Solutions Across Sectors</title>
+  <meta name="description" content="DB4Cloud delivers specialized technology solutions across multiple industries including Finance, Healthcare, Manufacturing, Retail, Technology, Energy, and more. Transform your industry-specific challenges into opportunities." />
+  <meta name="keywords" content="DB4Cloud industries, technology solutions, finance tech, healthcare IT, manufacturing technology, retail solutions, energy sector IT, education technology, entertainment solutions" />
+  <meta name="author" content="DB4Cloud" />
+  <link rel="canonical" href="https://db4cloud.in/industries" />
+
+  {/* Open Graph Meta Tags */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DB4Cloud Technologies" />
+  <meta property="og:title" content="Industry Solutions - DB4Cloud Technologies" />
+  <meta property="og:description" content="Discover how DB4Cloud's technology solutions are transforming various industries. From Finance to Healthcare, Manufacturing to Retail - we deliver industry-specific excellence." />
+  <meta property="og:url" content="https://db4cloud.in/industries" />
+  <meta property="og:image" content="https://db4cloud.in/images/industries-banner.jpg" />
+
+  {/* Twitter Card Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DB4Cloud" />
+  <meta name="twitter:title" content="Industry-Specific Technology Solutions | DB4Cloud" />
+  <meta name="twitter:description" content="Expert technology solutions tailored for Finance, Healthcare, Manufacturing, Retail, Energy, and more. Transform your industry with DB4Cloud." />
+  <meta name="twitter:image" content="https://db4cloud.in/images/industries-banner.jpg" />
+
+  {/* Additional Meta Tags */}
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="generator" content="React" />
+
+  {/* Schema.org Industry Solutions Structured Data */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "Industries We Serve - DB4Cloud Technologies",
+        "description": "Industry-specific technology solutions across multiple sectors",
+        "provider": {
+          "@type": "Organization",
+          "name": "DB4Cloud Technologies",
+          "url": "https://db4cloud.in"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Technology Industry Solutions",
+                "description": "Software, IT Services, Cloud Computing, AI Solutions"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Finance and Insurance Solutions",
+                "description": "Banking, Investment Services, Fintech Solutions"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Healthcare Solutions",
+                "description": "Healthcare IT, Medical Systems, Pharmaceutical Technology"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Manufacturing Solutions",
+                "description": "Industrial IoT, Automation, Supply Chain Technology"
+              }
+            }
+          ]
+        }
+      }
+    `}
+  </script>
+</Helmet>
+
+
+
       {/* pt-32 adds padding-top to push the content down */}
       <div className="container mx-auto">
         <h2 className="text-4xl font-semibold text-yellow-300 mb-12 text-center">
