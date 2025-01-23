@@ -165,9 +165,9 @@ const Home = () => {
 
 <Helmet>
   {/* Basic Meta Tags */}
-  <title>DB4Cloud Technologies - Innovative Cloud & Software Solutions</title>
+  <title>DB4Cloud Technologies- Digital & Cloud Solutions</title>
   <meta name="description" content="DB4Cloud Technologies delivers cutting-edge cloud computing, AI/ML, custom software development, and digital transformation solutions. Transform your business with our innovative technology services." />
-  <meta name="keywords" content="DB4Cloud, cloud computing, AI ML, software development, digital transformation, DevOps, web development, mobile apps, cybersecurity, ERP solutions, Atlassian" />
+  <meta name="keywords" content="DB4Cloud delivers cutting-edge cloud, AI/ML, and software solutions to transform businesses with innovative digital services." />
   <meta name="author" content="DB4Cloud" />
   <link rel="canonical" href="https://db4cloud.in" />
 

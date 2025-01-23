@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -9,10 +9,25 @@ import Careers from "./components/Careers";
 import Logo from "./components/Logo"; 
 import Footer from "./components/Footer"; 
 import './App.css'; 
+import { useLocation } from "react-router-dom";
+
+// Facebook Pixel tracking component
+const FacebookPixelTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, [location]);
+
+  return null;
+};
  
 const App = () => {
   return (
     <Router>
+      <FacebookPixelTracker />
       <div className="App">
         {/* Add the logo outside the Navbar */}
          <Logo />
