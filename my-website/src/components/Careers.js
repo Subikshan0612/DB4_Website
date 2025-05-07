@@ -33,18 +33,18 @@ const Careers = () => {
   }, []);
 
   const jobListings = [
-    {
-      title: "Frontend Developer",
-      description: "Join our team to build engaging and interactive user interfaces.",
-      location: "Chennai & Hyderabad",
-      icon: <FaLaptopCode className="text-6xl text-yellow-300" />,
-    },
-    {
-      title: "Backend Developer",
-      description: "We are looking for an experienced backend developer to build scalable server-side applications.",
-      location: "Chennai & Hyderabad",
-      icon: <FaDatabase className="text-6xl text-yellow-300" />,
-    },
+    // {
+    //   title: "Frontend Developer",
+    //   description: "Join our team to build engaging and interactive user interfaces.",
+    //   location: "Chennai & Hyderabad",
+    //   icon: <FaLaptopCode className="text-6xl text-yellow-300" />,
+    // },
+    // {
+    //   title: "Backend Developer",
+    //   description: "We are looking for an experienced backend developer to build scalable server-side applications.",
+    //   location: "Chennai & Hyderabad",
+    //   icon: <FaDatabase className="text-6xl text-yellow-300" />,
+    // },
     {
       title: "Full Stack Developer",
       description: "Looking for an all-rounder to work on both frontend and backend of web applications.",
@@ -57,12 +57,12 @@ const Careers = () => {
       location: "Chennai & Hyderabad",
       icon: <FaPen className="text-6xl text-yellow-300" />,
     },
-    {
-      title: "Product Manager",
-      description: "Seeking a proactive product manager to oversee the development of innovative products from concept to launch.",
-      location: "Chennai & Hyderabad",
-      icon: <FaUsers className="text-6xl text-yellow-300" />,
-    },
+    // {
+    //   title: "Product Manager",
+    //   description: "Seeking a proactive product manager to oversee the development of innovative products from concept to launch.",
+    //   location: "Chennai & Hyderabad",
+    //   icon: <FaUsers className="text-6xl text-yellow-300" />,
+    // },
     {
       title: "Technologies Internship Programs",
       description: "Exciting opportunity to gain hands-on experience in Software Development, DevOps practices, AWS Cloud Services, and Microsoft Azure. Get industry-recognized certifications while working on real-world projects. Our structured program includes mentorship from industry experts and comprehensive training in modern development practices.",
@@ -158,8 +158,8 @@ const Careers = () => {
           </p>
           <div className="flex items-center justify-center mt-4 space-x-2">
             <FaEnvelope className="text-yellow-300 text-xl" />
-            <a href="mailto:hr@db4cloud.in" className="text-blue-400 hover:text-blue-600 text-lg">
-              hr@db4cloud.in
+            <a href="mailto:careers@db4cloud.in" className="text-blue-400 hover:text-blue-600 text-lg">
+            careers@db4cloud.in
             </a>
           </div>
         </div>
