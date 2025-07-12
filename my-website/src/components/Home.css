@@ -1,0 +1,353 @@
+/* Home Component Specific Styles */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #581c87, #000000, #000000);
+  color: #f3f4f6;
+}
+
+/* Hero Section Styles */
+.home-hero-section {
+  position: relative;
+  background: linear-gradient(to right, #581c87, #000000, #000000);
+}
+
+.home-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.home-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fbbf24;
+  font-family: "Space Gortex", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-hero-description {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-hero-button {
+  background: linear-gradient(to right, #14b8a6, #6366f1, #a855f7);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.home-hero-button:hover {
+  background: linear-gradient(to right, #0d9488, #4f46e5);
+  transform: scale(1.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  rotate: 3deg;
+}
+
+/* Section Styles */
+.home-section {
+  margin-top: 0;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(to right, #581c87, #000000, #000000);
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.home-about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-about-content {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.home-about-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-about-text {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-about-image-container {
+  width: 100%;
+}
+
+.home-about-image {
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 4px solid #eab308;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Carousel Styles */
+.home-carousel-section {
+  overflow: hidden;
+}
+
+.home-carousel-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  max-width: 112rem;
+}
+
+.home-carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.home-carousel-slide.active {
+  opacity: 1;
+}
+
+.home-carousel-slide.inactive {
+  opacity: 0;
+}
+
+.home-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.home-carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.home-carousel-caption-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+/* Expertise Section Styles */
+.home-expertise-section {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.home-expertise-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.home-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.home-service-item {
+  text-align: center;
+}
+
+.home-service-icon {
+  color: #fde047;
+  font-size: 3.75rem;
+  margin: 0 auto 1rem auto;
+}
+
+.home-service-text {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+}
+
+/* Contact Section Styles */
+.home-contact-section {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.home-contact-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+}
+
+.home-contact-text {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.home-contact-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.home-contact-button {
+  background: linear-gradient(to right, #dc2626, #ea580c, #eab308);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.home-contact-button:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .home-hero-title {
+    font-size: 3rem;
+  }
+
+  .home-about-section {
+    flex-direction: row;
+  }
+
+  .home-about-content {
+    width: 50%;
+    padding-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .home-about-title {
+    text-align: left;
+  }
+
+  .home-about-text {
+    text-align: left;
+  }
+
+  .home-about-image-container {
+    width: 50%;
+  }
+
+  .home-expertise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-carousel-container {
+    height: 500px;
+  }
+
+  .home-carousel-title {
+    font-size: 2.25rem;
+  }
+
+  .home-carousel-caption-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-carousel-container {
+    height: 700px;
+  }
+
+  .home-carousel-title {
+    font-size: 2.25rem;
+  }
+
+  .home-carousel-caption {
+    padding: 1rem;
+  }
+
+  .home-carousel-caption-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .home-carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .home-carousel-caption {
+    padding: 0.5rem;
+  }
+
+  .home-carousel-caption-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Animation Classes for GSAP */
+.home-header-text {
+  /* GSAP will handle animations */
+}
+
+.home-description {
+  /* GSAP will handle animations */
+}
+
+.home-fade-in {
+  /* GSAP will handle animations */
+}
+
+.home-icon {
+  /* GSAP will handle animations */
+}

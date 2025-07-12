@@ -1,0 +1,311 @@
+/* Careers Component Specific Styles */
+.careers-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #581c87, #000000, #000000);
+  color: #f3f4f6;
+}
+
+.careers-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Careers Heading Styles */
+.careers-main-heading {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #fde047;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* How to Apply Section Styles */
+.careers-apply-section {
+  margin-bottom: 3rem;
+  text-align: center;
+  background-color: #111827;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.careers-apply-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fde047;
+  margin-bottom: 1rem;
+}
+
+.careers-apply-text {
+  color: #e5e7eb;
+  font-size: 1.125rem;
+}
+
+.careers-apply-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.careers-apply-icon {
+  color: #fde047;
+  font-size: 1.25rem;
+}
+
+.careers-apply-email {
+  color: #60a5fa;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.careers-apply-email:hover {
+  color: #2563eb;
+}
+
+/* Job Listings Grid */
+.careers-jobs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Individual Job Card Styles */
+.careers-job-card {
+  background-color: #111827;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.careers-job-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.careers-job-card:active {
+  transform: scale(0.95);
+}
+
+/* Job Card Icon */
+.careers-job-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.careers-job-icon {
+  color: #fde047;
+  font-size: 3.75rem;
+}
+
+/* Job Card Content */
+.careers-job-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fde047;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.careers-job-description {
+  color: #e5e7eb;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.careers-job-location {
+  color: #e5e7eb;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.careers-job-location-label {
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .careers-jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .careers-main-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .careers-jobs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .careers-jobs-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Animation Classes for GSAP */
+.careers-job-listing {
+  /* GSAP will handle opacity and scale animations */
+}
+
+.careers-heading {
+  /* GSAP will handle opacity and y position animations */
+}
+
+.careers {
+  /* GSAP ScrollTrigger target */
+}
+
+/* Motion Animation Classes */
+.careers-motion-icon {
+  /* Framer Motion will handle icon animations */
+}
+
+.careers-motion-title {
+  /* Framer Motion will handle title animations */
+}
+
+.careers-motion-description {
+  /* Framer Motion will handle description animations */
+}
+
+.careers-motion-location {
+  /* Framer Motion will handle location animations */
+}
+
+/* Additional Hover Effects */
+.careers-job-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-job-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.careers-job-card:hover::before {
+  left: 100%;
+}
+
+/* Focus States for Accessibility */
+.careers-apply-email:focus {
+  outline: 2px solid #fde047;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.careers-job-card:focus {
+  outline: 2px solid #fde047;
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.careers-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.careers-loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #374151;
+  border-top: 4px solid #fde047;
+  border-radius: 50%;
+  animation: careers-spin 1s linear infinite;
+}
+
+@keyframes careers-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .careers-container {
+    background: white;
+    color: black;
+  }
+
+  .careers-job-card {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .careers-main-heading,
+  .careers-apply-title,
+  .careers-job-title {
+    color: black;
+  }
+
+  .careers-job-description,
+  .careers-job-location,
+  .careers-apply-text {
+    color: black;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .careers-container {
+    background: black;
+    color: white;
+  }
+
+  .careers-job-card {
+    background: black;
+    border: 2px solid white;
+  }
+
+  .careers-main-heading,
+  .careers-apply-title,
+  .careers-job-title {
+    color: yellow;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .careers-job-card {
+    transition: none;
+  }
+
+  .careers-job-card:hover {
+    transform: none;
+  }
+
+  .careers-job-card::before {
+    transition: none;
+  }
+
+  .careers-loading-spinner {
+    animation: none;
+  }
+}

@@ -1,0 +1,531 @@
+/* Industries Component Specific Styles */
+.industries-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #581c87, #000000, #000000);
+  color: #f3f4f6;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 8rem;
+}
+
+.industries-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Industries Heading Styles */
+.industries-main-heading {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #fde047;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Industries Grid Layout */
+.industries-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Industry Card Styles */
+.industries-card {
+  background-color: #111827;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.industries-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border-color: #fde047;
+}
+
+.industries-card:active {
+  transform: scale(0.95);
+}
+
+/* Industry Image Styles */
+.industries-card-image {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.industries-card:hover .industries-card-image {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+/* Industry Title Styles */
+.industries-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fde047;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* Industry Subcategories List */
+.industries-card-list {
+  color: #e5e7eb;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.industries-card-list-item {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.industries-card-list-item:before {
+  content: "•";
+  color: #fde047;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.industries-card:hover .industries-card-list-item {
+  color: #f3f4f6;
+}
+
+.industries-card-list-item:hover {
+  color: #fde047;
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+}
+
+/* Animation Classes for Framer Motion */
+.industries-motion-card {
+  /* Framer Motion will handle hover and tap animations */
+}
+
+/* Loading States */
+.industries-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.industries-card-loading {
+  background: linear-gradient(90deg, #111827 25%, #1f2937 50%, #111827 75%);
+  background-size: 200% 100%;
+  animation: industries-shimmer 2s infinite;
+}
+
+@keyframes industries-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 640px) {
+  .industries-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 6rem;
+  }
+
+  .industries-main-heading {
+    font-size: 1.875rem;
+    margin-bottom: 2rem;
+  }
+
+  .industries-grid {
+    gap: 1.5rem;
+  }
+
+  .industries-card {
+    padding: 1rem;
+  }
+
+  .industries-card-title {
+    font-size: 1.25rem;
+  }
+
+  .industries-card-image {
+    height: 8rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .industries-container {
+    padding-top: 7rem;
+  }
+
+  .industries-main-heading {
+    font-size: 2rem;
+  }
+
+  .industries-card-image {
+    height: 9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .industries-main-heading {
+    font-size: 2.5rem;
+  }
+
+  .industries-card-image {
+    height: 11rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .industries-main-container {
+    max-width: 1400px;
+  }
+
+  .industries-grid {
+    gap: 2.5rem;
+  }
+
+  .industries-card {
+    padding: 2rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .industries-container {
+    background: white;
+    color: black;
+    padding: 1rem;
+  }
+
+  .industries-card {
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .industries-main-heading,
+  .industries-card-title {
+    color: black;
+  }
+
+  .industries-card-list {
+    color: black;
+  }
+
+  .industries-card-image {
+    filter: grayscale(100%);
+  }
+
+  .industries-card:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .industries-container {
+    background: black;
+    color: white;
+  }
+
+  .industries-card {
+    background: black;
+    border: 2px solid white;
+  }
+
+  .industries-main-heading,
+  .industries-card-title {
+    color: yellow;
+  }
+
+  .industries-card-list {
+    color: white;
+  }
+
+  .industries-card-list-item:before {
+    color: yellow;
+  }
+
+  .industries-card:hover {
+    border-color: yellow;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .industries-card,
+  .industries-card-image,
+  .industries-card-list-item {
+    transition: none;
+  }
+
+  .industries-card:hover,
+  .industries-card:hover .industries-card-image,
+  .industries-card-list-item:hover {
+    transform: none;
+  }
+
+  .industries-card-loading {
+    animation: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .industries-container {
+    background: linear-gradient(to right, #581c87, #000000, #000000);
+    color: #f3f4f6;
+  }
+}
+
+/* Focus States for Accessibility */
+.industries-card:focus {
+  outline: 2px solid #fde047;
+  outline-offset: 2px;
+}
+
+.industries-card:focus-visible {
+  outline: 2px solid #fde047;
+  outline-offset: 2px;
+}
+
+/* Hover Effects Enhancement */
+.industries-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(253, 224, 71, 0.1),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 0.5rem;
+}
+
+.industries-card:hover::before {
+  opacity: 1;
+}
+
+.industries-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image Overlay Effect */
+.industries-card-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin-bottom: 1.5rem;
+}
+
+.industries-card-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.industries-card:hover .industries-card-image-overlay {
+  opacity: 1;
+}
+
+/* Card Content Animation */
+.industries-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Landscape Mobile Styles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .industries-container {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .industries-main-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .industries-card-image {
+    height: 6rem;
+  }
+}
+
+/* Ultra Wide Screen Styles */
+@media (min-width: 1920px) {
+  .industries-main-container {
+    max-width: 1600px;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Animation Keyframes */
+@keyframes industries-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes industries-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility Classes */
+.industries-hidden {
+  display: none;
+}
+
+.industries-visible {
+  display: block;
+}
+
+.industries-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Card States */
+.industries-card-active {
+  border-color: #fde047;
+  box-shadow: 0 0 0 2px rgba(253, 224, 71, 0.3);
+}
+
+.industries-card-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Grid Layout Variations */
+.industries-grid-dense {
+  grid-auto-flow: dense;
+}
+
+.industries-grid-masonry {
+  columns: 3;
+  column-gap: 2rem;
+}
+
+@media (max-width: 1023px) {
+  .industries-grid-masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 639px) {
+  .industries-grid-masonry {
+    columns: 1;
+  }
+}
+
+/* Card Variants */
+.industries-card-featured {
+  border: 2px solid #fde047;
+  background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+.industries-card-compact {
+  padding: 1rem;
+}
+
+.industries-card-compact .industries-card-image {
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+
+.industries-card-compact .industries-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Loading Skeleton */
+.industries-skeleton {
+  background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+  background-size: 200% 100%;
+  animation: industries-shimmer 1.5s infinite;
+}
+
+.industries-skeleton-title {
+  height: 1.5rem;
+  width: 80%;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.industries-skeleton-text {
+  height: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.industries-skeleton-image {
+  height: 10rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}

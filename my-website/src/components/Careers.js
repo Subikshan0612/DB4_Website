@@ -1,212 +1,314 @@
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useState, useMemo, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaLaptopCode, FaDatabase, FaPen, FaUsers, FaEnvelope, FaGraduationCap } from "react-icons/fa";
-import {Helmet} from 'react-helmet';
+import {
+  FaBriefcase,
+  FaPen,
+  FaGraduationCap,
+  FaEnvelope,
+} from "react-icons/fa";
+import { Helmet } from "react-helmet";
+import "./Careers.css";
+
+// Lazy load GSAP only when needed
+const loadGSAP = () => import("gsap").then((module) => module.gsap);
+const loadScrollTrigger = () =>
+  import("gsap/ScrollTrigger").then((module) => module.ScrollTrigger);
 
 const Careers = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  const [gsapLoaded, setGsapLoaded] = useState(false);
 
-    gsap.fromTo(
-      ".job-listing",
-      { opacity: 0, scale: 0.8 },
+  // Memoize job listings to prevent unnecessary re-renders
+  const jobListings = useMemo(
+    () => [
       {
-        opacity: 1,
-        scale: 1,
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: ".careers",
-          start: "top 80%",
-          end: "top 30%",
-          scrub: true,
-        },
-      }
-    );
+        title: "Full Stack Developer",
+        description:
+          "Looking for an all-rounder to work on both frontend and backend of web applications.",
+        location: "Chennai & Hyderabad",
+        icon: <FaBriefcase className="careers-job-icon" />,
+      },
+      {
+        title: "UI/UX Designer",
+        description:
+          "We need a creative UI/UX designer to design user-friendly interfaces and enhance the user experience.",
+        location: "Chennai & Hyderabad",
+        icon: <FaPen className="careers-job-icon" />,
+      },
+      {
+        title: "Technologies Internship Programs",
+        description:
+          "Exciting opportunity to gain hands-on experience in Software Development, DevOps practices, AWS Cloud Services, and Microsoft Azure. Get industry-recognized certifications while working on real-world projects. Our structured program includes mentorship from industry experts and comprehensive training in modern development practices.",
+        location: "Chennai & Hyderabad",
+        icon: <FaGraduationCap className="careers-job-icon" />,
+      },
+    ],
+    []
+  );
 
-    gsap.fromTo(
-      ".careers-heading",
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }
-    );
+  // Memoize animation variants
+  const animationVariants = useMemo(
+    () => ({
+      hoverEffect: {
+        scale: 1.05,
+        transition: { duration: 0.3 },
+      },
+      tapEffect: {
+        scale: 0.95,
+        transition: { duration: 0.2 },
+      },
+      cardInitial: { opacity: 0, y: 20 },
+      cardAnimate: { opacity: 1, y: 0 },
+      iconInitial: { opacity: 0, y: -20 },
+      iconAnimate: { opacity: 1, y: 0 },
+      titleInitial: { opacity: 0, x: -50 },
+      titleAnimate: { opacity: 1, x: 0 },
+      descriptionInitial: { opacity: 0, x: 50 },
+      descriptionAnimate: { opacity: 1, x: 0 },
+    }),
+    []
+  );
+
+  useEffect(() => {
+    // Use Intersection Observer instead of GSAP ScrollTrigger for better performance
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -10% 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("careers-visible");
+        }
+      });
+    }, observerOptions);
+
+    // Observe job cards
+    const jobCards = document.querySelectorAll(".careers-job-listing");
+    jobCards.forEach((card) => observer.observe(card));
+
+    // Load GSAP only if needed (for complex animations)
+    const loadGSAPAnimations = async () => {
+      try {
+        const [gsap, ScrollTrigger] = await Promise.all([
+          loadGSAP(),
+          loadScrollTrigger(),
+        ]);
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Only animate heading with GSAP
+        gsap.fromTo(
+          ".careers-heading",
+          { opacity: 0, y: -30 },
+          { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+        );
+
+        setGsapLoaded(true);
+      } catch (error) {
+        console.warn("GSAP failed to load:", error);
+      }
+    };
+
+    // Delay GSAP loading to prioritize critical content
+    const timer = setTimeout(loadGSAPAnimations, 100);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, []);
 
-  const jobListings = [
-    // {
-    //   title: "Frontend Developer",
-    //   description: "Join our team to build engaging and interactive user interfaces.",
-    //   location: "Chennai & Hyderabad",
-    //   icon: <FaLaptopCode className="text-6xl text-yellow-300" />,
-    // },
-    // {
-    //   title: "Backend Developer",
-    //   description: "We are looking for an experienced backend developer to build scalable server-side applications.",
-    //   location: "Chennai & Hyderabad",
-    //   icon: <FaDatabase className="text-6xl text-yellow-300" />,
-    // },
-    {
-      title: "Full Stack Developer",
-      description: "Looking for an all-rounder to work on both frontend and backend of web applications.",
-      location: "Chennai & Hyderabad",
-      icon: <FaBriefcase className="text-6xl text-yellow-300" />,
-    },
-    {
-      title: "UI/UX Designer",
-      description: "We need a creative UI/UX designer to design user-friendly interfaces and enhance the user experience.",
-      location: "Chennai & Hyderabad",
-      icon: <FaPen className="text-6xl text-yellow-300" />,
-    },
-    // {
-    //   title: "Product Manager",
-    //   description: "Seeking a proactive product manager to oversee the development of innovative products from concept to launch.",
-    //   location: "Chennai & Hyderabad",
-    //   icon: <FaUsers className="text-6xl text-yellow-300" />,
-    // },
-    {
-      title: "Technologies Internship Programs",
-      description: "Exciting opportunity to gain hands-on experience in Software Development, DevOps practices, AWS Cloud Services, and Microsoft Azure. Get industry-recognized certifications while working on real-world projects. Our structured program includes mentorship from industry experts and comprehensive training in modern development practices.",
-      location: "Chennai & Hyderabad",
-      icon: <FaGraduationCap className="text-6xl text-yellow-300" />,
-    },
-
-  ];
-
-  const hoverEffect = {
-    scale: 1.05,
-    transition: { duration: 0.3 },
-  };
-
-  const tapEffect = {
-    scale: 0.95,
-    transition: { duration: 0.2 },
-  };
+  // Optimized structured data
+  const structuredData = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "DB4Cloud",
+      url: "https://db4cloud.in",
+      sameAs: [
+        "https://www.linkedin.com/company/db4cloud",
+        "https://twitter.com/DB4Cloud",
+      ],
+      jobPosting: jobListings.map((job) => ({
+        "@type": "JobPosting",
+        title: job.title,
+        description: job.description,
+        employmentType: "FULL_TIME",
+        jobLocation: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: job.location,
+            addressCountry: "IN",
+          },
+        },
+        hiringOrganization: {
+          "@type": "Organization",
+          name: "DB4Cloud",
+        },
+      })),
+    }),
+    [jobListings]
+  );
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-900 via-black to-black text-gray-100">
+    <div className="careers-container">
       <Helmet>
-  {/* Basic Meta Tags */}
-  <title>Careers at DB4Cloud - Join Our Dynamic Tech Team</title>
-  <meta name="description" content="Explore exciting career opportunities at DB4Cloud. We're hiring Frontend, Backend, Full Stack Developers, UI/UX Designers, Product Managers and offering Technology Internships in Chennai & Hyderabad." />
-  <meta name="keywords" content="DB4Cloud careers, tech jobs, software development, internships, Chennai jobs, Hyderabad jobs, frontend developer, backend developer, full stack developer, UI/UX designer, product manager" />
-  <meta name="author" content="DB4Cloud" />
-  <link rel="canonical" href="https://db4cloud.in/careers" />
+        {/* Critical meta tags first */}
+        <title>Careers at DB4Cloud - Join Our Dynamic Tech Team</title>
+        <meta
+          name="description"
+          content="Explore exciting career opportunities at DB4Cloud. We're hiring Frontend, Backend, Full Stack Developers, UI/UX Designers in Chennai & Hyderabad."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://db4cloud.in/careers" />
 
-  {/* Open Graph Meta Tags */}
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="DB4Cloud" />
-  <meta property="og:title" content="Career Opportunities at DB4Cloud" />
-  <meta property="og:description" content="Join our dynamic team at DB4Cloud. We offer exciting roles in software development, design, and product management with opportunities for growth and innovation." />
-  <meta property="og:url" content="https://db4cloud.in/careers" />
-  <meta property="og:image" content="https://db4cloud.in/images/careers-banner.jpg" />
+        {/* Preload critical resources */}
+        <link
+          rel="preload"
+          href="/fonts/main-font.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
 
-  {/* Twitter Card Meta Tags */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@DB4Cloud" />
-  <meta name="twitter:title" content="Join DB4Cloud - Career Opportunities" />
-  <meta name="twitter:description" content="Build your career with DB4Cloud. Explore roles in development, design, and product management in Chennai & Hyderabad." />
-  <meta name="twitter:image" content="https://db4cloud.in/images/careers-banner.jpg" />
+        {/* Other meta tags */}
+        <meta
+          name="keywords"
+          content="DB4Cloud careers, tech jobs, software development, internships, Chennai jobs, Hyderabad jobs"
+        />
+        <meta name="author" content="DB4Cloud" />
+        <meta name="robots" content="index, follow" />
 
-  {/* Additional Meta Tags */}
-  <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="language" content="English" />
-  <meta name="revisit-after" content="7 days" />
-  <meta name="generator" content="React" />
+        {/* Open Graph - optimized */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Career Opportunities at DB4Cloud" />
+        <meta
+          property="og:description"
+          content="Join our dynamic team at DB4Cloud. We offer exciting roles in software development, design, and product management."
+        />
+        <meta property="og:url" content="https://db4cloud.in/careers" />
+        <meta
+          property="og:image"
+          content="https://db4cloud.in/images/careers-banner.webp"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-  {/* Schema.org Job Posting Structured Data */}
-  <script type="application/ld+json">
-    {`
-      {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "DB4Cloud",
-        "url": "https://db4cloud.in",
-        "sameAs": [
-          "https://www.linkedin.com/company/db4cloud",
-          "https://twitter.com/DB4Cloud"
-        ],
-        "jobPosting": {
-          "@type": "JobPosting",
-          "title": "Multiple Technology Positions",
-          "description": "Various roles including Frontend, Backend, Full Stack Development, UI/UX Design, and Product Management",
-          "employmentType": "FULL_TIME",
-          "jobLocation": {
-            "@type": "Place",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Chennai & Hyderabad",
-              "addressCountry": "IN"
-            }
-          }
-        }
-      }
-    `}
-  </script>
-</Helmet>
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Join DB4Cloud - Career Opportunities"
+        />
+        <meta
+          name="twitter:description"
+          content="Build your career with DB4Cloud. Explore roles in development, design, and product management."
+        />
+        <meta
+          name="twitter:image"
+          content="https://db4cloud.in/images/careers-banner.webp"
+        />
 
-      <div className="container mx-auto pt-28 px-4">
-        <h2 className="careers-heading text-4xl font-semibold text-yellow-300 mb-12 text-center">
-          Join Our Team
-        </h2>
+        {/* Optimized structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
+      <div className="careers-main-container">
+        <h1 className="careers-main-heading careers-heading">Join Our Team</h1>
 
         {/* How to Apply Section */}
-        <div className="mb-12 text-center bg-gray-900 p-6 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-bold text-yellow-300 mb-4">How to Apply</h3>
-          <p className="text-gray-200 text-lg">
+        <section
+          className="careers-apply-section"
+          aria-labelledby="apply-heading"
+        >
+          <h2 id="apply-heading" className="careers-apply-title">
+            How to Apply
+          </h2>
+          <p className="careers-apply-text">
             Interested candidates can submit their resumes to:
           </p>
-          <div className="flex items-center justify-center mt-4 space-x-2">
-            <FaEnvelope className="text-yellow-300 text-xl" />
-            <a href="mailto:careers@db4cloud.in" className="text-blue-400 hover:text-blue-600 text-lg">
-            careers@db4cloud.in
+          <div className="careers-apply-contact">
+            <FaEnvelope className="careers-apply-icon" aria-hidden="true" />
+            <a
+              href="mailto:careers@db4cloud.in"
+              className="careers-apply-email"
+              rel="noopener"
+            >
+              careers@db4cloud.in
             </a>
           </div>
-        </div>
+        </section>
 
-        <div className="careers grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <section
+          className="careers careers-jobs-grid"
+          aria-labelledby="jobs-heading"
+        >
+          <h2 id="jobs-heading" className="sr-only">
+            Available Positions
+          </h2>
           {jobListings.map((job, index) => (
-            <motion.div
-              key={index}
-              className="job-listing bg-gray-900 p-6 rounded-lg shadow-lg"
-              whileHover={hoverEffect}
-              whileTap={tapEffect}
+            <motion.article
+              key={`${job.title}-${index}`}
+              className="careers-job-listing careers-job-card"
+              whileHover={animationVariants.hoverEffect}
+              whileTap={animationVariants.tapEffect}
+              initial={animationVariants.cardInitial}
+              animate={animationVariants.cardAnimate}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              role="article"
+              aria-labelledby={`job-title-${index}`}
             >
               <motion.div
-                className="icon-wrapper"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="careers-job-icon-wrapper careers-motion-icon"
+                initial={animationVariants.iconInitial}
+                animate={animationVariants.iconAnimate}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                aria-hidden="true"
               >
                 {job.icon}
               </motion.div>
+
               <motion.h3
-                className="text-2xl font-bold text-yellow-300 mt-4"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.3 }}
+                id={`job-title-${index}`}
+                className="careers-job-title careers-motion-title"
+                initial={animationVariants.titleInitial}
+                animate={animationVariants.titleAnimate}
+                transition={{ duration: 0.4, delay: index * 0.15 }}
               >
                 {job.title}
               </motion.h3>
+
               <motion.p
-                className="text-gray-200 mt-2"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.4 }}
+                className="careers-job-description careers-motion-description"
+                initial={animationVariants.descriptionInitial}
+                animate={animationVariants.descriptionAnimate}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
               >
                 {job.description}
               </motion.p>
+
               <motion.p
-                className="text-gray-200 mt-2"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.5 }}
+                className="careers-job-location careers-motion-location"
+                initial={animationVariants.descriptionInitial}
+                animate={animationVariants.descriptionAnimate}
+                transition={{ duration: 0.4, delay: index * 0.25 }}
               >
-                <strong>Location:</strong> {job.location}
+                <span className="careers-job-location-label">Location:</span>{" "}
+                {job.location}
               </motion.p>
-            </motion.div>
+            </motion.article>
           ))}
-        </div>
+        </section>
       </div>
     </div>
   );

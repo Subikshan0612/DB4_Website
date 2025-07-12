@@ -1,0 +1,1387 @@
+/* Services Component Specific Styles */
+
+/* Main Services Container */
+.services-main-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    to right,
+    rgb(126, 34, 206),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
+  );
+  color: rgb(243, 244, 246);
+}
+
+/* Services Inner Container */
+.services-inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Services Heading */
+.services-heading {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: rgb(253, 224, 71);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Services Grid Container */
+.services-grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .services-grid-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Service Card */
+.service-card {
+  background-color: rgb(17, 24, 39);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+/* Service Icon Wrapper */
+.service-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.service-icon-wrapper .service-icon {
+  font-size: 4rem;
+  color: rgb(253, 224, 71);
+}
+
+/* Service Title */
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(253, 224, 71);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Service Description */
+.service-description {
+  color: rgb(229, 231, 235);
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* GSAP Animation Classes */
+.services-heading-animate {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.services-heading-animate.services-heading-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card-animate {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.service-card-animate.service-card-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Framer Motion Animation States */
+.service-card-motion {
+  will-change: transform;
+}
+
+.service-card-motion:hover {
+  transform: scale(1.05);
+}
+
+.service-card-motion:active {
+  transform: scale(0.95);
+}
+
+/* Icon Animation States */
+.service-icon-animate {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.service-icon-animate.service-icon-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-title-animate {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.service-title-animate.service-title-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.service-description-animate {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.service-description-animate.service-description-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Specific Service Icons */
+.service-icon-code {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-mobile {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-cloud {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-lock {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-robot {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-database {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-paintbrush {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-chartline {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-desktop {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-cogs {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-calendar {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-bullhorn {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-brain {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-snowflake {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-users {
+  color: rgb(253, 224, 71);
+}
+
+.service-icon-bolt {
+  color: rgb(253, 224, 71);
+}
+
+/* Hover Effects for Different Services */
+.service-card-software:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-webapp:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-cloud:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-security:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-ai:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-database:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-uiux:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-analytics:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-enterprise:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-devops:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-workday:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-marketing:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-genai:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-snowflake:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-erp:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+.service-card-salesforce:hover {
+  background-color: rgb(30, 41, 59);
+  border: 1px solid rgb(253, 224, 71);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 640px) {
+  .services-inner-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .services-heading {
+    font-size: 1.875rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+
+  .service-icon-wrapper .service-icon {
+    font-size: 3rem;
+  }
+
+  .service-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .services-inner-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .services-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-heading {
+    font-size: 2.5rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+  }
+
+  .service-icon-wrapper .service-icon {
+    font-size: 4.5rem;
+  }
+
+  .service-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Loading States */
+.services-loading {
+  opacity: 0.7;
+}
+
+.services-loading .service-card {
+  animation: services-pulse 2s infinite;
+}
+
+@keyframes services-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Focus States for Accessibility */
+.service-card:focus {
+  outline: 2px solid rgb(253, 224, 71);
+  outline-offset: 2px;
+}
+
+.service-card:focus-visible {
+  outline: 2px solid rgb(253, 224, 71);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .services-main-container {
+    background: black;
+    color: white;
+  }
+
+  .service-card {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .service-title,
+  .service-icon-wrapper .service-icon {
+    color: yellow;
+  }
+
+  .service-description {
+    color: white;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-icon-wrapper,
+  .service-title,
+  .service-description {
+    transition: none;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+
+  .services-loading .service-card {
+    animation: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .services-main-container {
+    background: linear-gradient(
+      to right,
+      rgb(88, 28, 135),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+  }
+
+  .service-card {
+    background-color: rgb(31, 41, 55);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .services-main-container {
+    background: white;
+    color: black;
+    min-height: auto;
+  }
+
+  .service-card {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: none;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .service-title,
+  .service-icon-wrapper .service-icon {
+    color: black;
+  }
+
+  .service-description {
+    color: black;
+  }
+
+  .services-grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Performance Optimizations */
+.service-card {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.service-icon-wrapper .service-icon {
+  will-change: transform;
+}
+
+/* Scroll Trigger Animation States */
+.services-scroll-trigger {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.services-scroll-trigger.services-scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Properties for Dynamic Theming */
+:root {
+  --services-primary-bg: linear-gradient(
+    to right,
+    rgb(126, 34, 206),
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
+  );
+  --services-card-bg: rgb(17, 24, 39);
+  --services-card-hover-bg: rgb(30, 41, 59);
+  --services-text-primary: rgb(243, 244, 246);
+  --services-text-secondary: rgb(229, 231, 235);
+  --services-accent-color: rgb(253, 224, 71);
+  --services-border-color: rgb(253, 224, 71);
+  --services-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --services-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-main-container {
+  background: var(--services-primary-bg);
+  color: var(--services-text-primary);
+}
+
+.service-card {
+  background-color: var(--services-card-bg);
+  box-shadow: var(--services-shadow);
+  transition: var(--services-transition);
+}
+
+.service-card:hover {
+  background-color: var(--services-card-hover-bg);
+  border: 1px solid var(--services-border-color);
+}
+
+.service-title,
+.service-icon-wrapper .service-icon {
+  color: var(--services-accent-color);
+}
+
+.service-description {
+  color: var(--services-text-secondary);
+}
+
+/* Animation Keyframes */
+@keyframes services-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes services-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes services-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes services-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes services-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes services-rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* GSAP Animation Classes */
+.services-gsap-fade-in {
+  animation: services-fade-in 1.2s ease-out;
+}
+
+.services-gsap-scale-in {
+  animation: services-scale-in 1s ease-out;
+}
+
+.services-gsap-slide-left {
+  animation: services-slide-in-left 0.6s ease-out;
+}
+
+.services-gsap-slide-right {
+  animation: services-slide-in-right 0.6s ease-out;
+}
+
+.services-gsap-bounce {
+  animation: services-bounce-in 0.7s ease-out;
+}
+
+.services-gsap-rotate {
+  animation: services-rotate-in 1.2s ease-out;
+}
+
+/* Stagger Animation Delays */
+.services-stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.services-stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.services-stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.services-stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.services-stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.services-stagger-6 {
+  animation-delay: 0.6s;
+}
+
+.services-stagger-7 {
+  animation-delay: 0.7s;
+}
+
+.services-stagger-8 {
+  animation-delay: 0.8s;
+}
+
+/* Utility Classes */
+.services-hidden {
+  display: none;
+}
+
+.services-visible {
+  display: block;
+}
+
+.services-opacity-0 {
+  opacity: 0;
+}
+
+.services-opacity-100 {
+  opacity: 1;
+}
+
+.services-transform-none {
+  transform: none;
+}
+
+.services-transform-scale-105 {
+  transform: scale(1.05);
+}
+
+.services-transform-scale-95 {
+  transform: scale(0.95);
+}
+
+/* Grid Layout Variations */
+.services-grid-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.services-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.services-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.services-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.services-grid-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.services-grid-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+/* Gap Variations */
+.services-gap-1 {
+  gap: 0.25rem;
+}
+
+.services-gap-2 {
+  gap: 0.5rem;
+}
+
+.services-gap-3 {
+  gap: 0.75rem;
+}
+
+.services-gap-4 {
+  gap: 1rem;
+}
+
+.services-gap-5 {
+  gap: 1.25rem;
+}
+
+.services-gap-6 {
+  gap: 1.5rem;
+}
+
+.services-gap-8 {
+  gap: 2rem;
+}
+
+.services-gap-10 {
+  gap: 2.5rem;
+}
+
+/* Padding Variations */
+.services-p-1 {
+  padding: 0.25rem;
+}
+
+.services-p-2 {
+  padding: 0.5rem;
+}
+
+.services-p-3 {
+  padding: 0.75rem;
+}
+
+.services-p-4 {
+  padding: 1rem;
+}
+
+.services-p-5 {
+  padding: 1.25rem;
+}
+
+.services-p-6 {
+  padding: 1.5rem;
+}
+
+.services-p-8 {
+  padding: 2rem;
+}
+
+/* Margin Variations */
+.services-m-1 {
+  margin: 0.25rem;
+}
+
+.services-m-2 {
+  margin: 0.5rem;
+}
+
+.services-m-3 {
+  margin: 0.75rem;
+}
+
+.services-m-4 {
+  margin: 1rem;
+}
+
+.services-m-5 {
+  margin: 1.25rem;
+}
+
+.services-m-6 {
+  margin: 1.5rem;
+}
+
+.services-m-8 {
+  margin: 2rem;
+}
+
+/* Text Alignment */
+.services-text-left {
+  text-align: left;
+}
+
+.services-text-center {
+  text-align: center;
+}
+
+.services-text-right {
+  text-align: right;
+}
+
+/* Font Sizes */
+.services-text-xs {
+  font-size: 0.75rem;
+}
+
+.services-text-sm {
+  font-size: 0.875rem;
+}
+
+.services-text-base {
+  font-size: 1rem;
+}
+
+.services-text-lg {
+  font-size: 1.125rem;
+}
+
+.services-text-xl {
+  font-size: 1.25rem;
+}
+
+.services-text-2xl {
+  font-size: 1.5rem;
+}
+
+.services-text-3xl {
+  font-size: 1.875rem;
+}
+
+.services-text-4xl {
+  font-size: 2.25rem;
+}
+
+/* Font Weights */
+.services-font-light {
+  font-weight: 300;
+}
+
+.services-font-normal {
+  font-weight: 400;
+}
+
+.services-font-medium {
+  font-weight: 500;
+}
+
+.services-font-semibold {
+  font-weight: 600;
+}
+
+.services-font-bold {
+  font-weight: 700;
+}
+
+.services-font-extrabold {
+  font-weight: 800;
+}
+
+/* Border Radius */
+.services-rounded-none {
+  border-radius: 0;
+}
+
+.services-rounded-sm {
+  border-radius: 0.125rem;
+}
+
+.services-rounded {
+  border-radius: 0.25rem;
+}
+
+.services-rounded-md {
+  border-radius: 0.375rem;
+}
+
+.services-rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.services-rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.services-rounded-2xl {
+  border-radius: 1rem;
+}
+
+.services-rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.services-rounded-full {
+  border-radius: 9999px;
+}
+
+/* Shadow Variations */
+.services-shadow-none {
+  box-shadow: none;
+}
+
+.services-shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.services-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.services-shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.services-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.services-shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.services-shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Transition Variations */
+.services-transition-none {
+  transition: none;
+}
+
+.services-transition-all {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-transition-colors {
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-transition-opacity {
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-transition-shadow {
+  transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-transition-transform {
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Duration Variations */
+.services-duration-75 {
+  transition-duration: 75ms;
+}
+
+.services-duration-100 {
+  transition-duration: 100ms;
+}
+
+.services-duration-150 {
+  transition-duration: 150ms;
+}
+
+.services-duration-200 {
+  transition-duration: 200ms;
+}
+
+.services-duration-300 {
+  transition-duration: 300ms;
+}
+
+.services-duration-500 {
+  transition-duration: 500ms;
+}
+
+.services-duration-700 {
+  transition-duration: 700ms;
+}
+
+.services-duration-1000 {
+  transition-duration: 1000ms;
+}
+
+/* Ease Variations */
+.services-ease-linear {
+  transition-timing-function: linear;
+}
+
+.services-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.services-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.services-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Z-Index Management */
+.services-z-0 {
+  z-index: 0;
+}
+
+.services-z-10 {
+  z-index: 10;
+}
+
+.services-z-20 {
+  z-index: 20;
+}
+
+.services-z-30 {
+  z-index: 30;
+}
+
+.services-z-40 {
+  z-index: 40;
+}
+
+.services-z-50 {
+  z-index: 50;
+}
+
+/* Overflow Control */
+.services-overflow-auto {
+  overflow: auto;
+}
+
+.services-overflow-hidden {
+  overflow: hidden;
+}
+
+.services-overflow-visible {
+  overflow: visible;
+}
+
+.services-overflow-scroll {
+  overflow: scroll;
+}
+
+/* Position Utilities */
+.services-relative {
+  position: relative;
+}
+
+.services-absolute {
+  position: absolute;
+}
+
+.services-fixed {
+  position: fixed;
+}
+
+.services-sticky {
+  position: sticky;
+}
+
+/* Display Utilities */
+.services-block {
+  display: block;
+}
+
+.services-inline-block {
+  display: inline-block;
+}
+
+.services-inline {
+  display: inline;
+}
+
+.services-flex {
+  display: flex;
+}
+
+.services-inline-flex {
+  display: inline-flex;
+}
+
+.services-grid {
+  display: grid;
+}
+
+.services-inline-grid {
+  display: inline-grid;
+}
+
+/* Flex Utilities */
+.services-flex-row {
+  flex-direction: row;
+}
+
+.services-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.services-flex-col {
+  flex-direction: column;
+}
+
+.services-flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.services-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.services-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.services-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.services-items-start {
+  align-items: flex-start;
+}
+
+.services-items-end {
+  align-items: flex-end;
+}
+
+.services-items-center {
+  align-items: center;
+}
+
+.services-items-baseline {
+  align-items: baseline;
+}
+
+.services-items-stretch {
+  align-items: stretch;
+}
+
+.services-justify-start {
+  justify-content: flex-start;
+}
+
+.services-justify-end {
+  justify-content: flex-end;
+}
+
+.services-justify-center {
+  justify-content: center;
+}
+
+.services-justify-between {
+  justify-content: space-between;
+}
+
+.services-justify-around {
+  justify-content: space-around;
+}
+
+.services-justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Final Performance Optimizations */
+.services-main-container,
+.service-card,
+.service-icon-wrapper,
+.service-title,
+.service-description {
+  /* Ensure smooth rendering */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remaining CSS - Final Section */
+
+/* Container Queries Support */
+@container (min-width: 320px) {
+  .services-container-sm {
+    padding: 1rem;
+  }
+}
+
+@container (min-width: 768px) {
+  .services-container-md {
+    padding: 2rem;
+  }
+}
+
+@container (min-width: 1024px) {
+  .services-container-lg {
+    padding: 3rem;
+  }
+}
+
+/* Aspect Ratio Utilities */
+.services-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.services-aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.services-aspect-auto {
+  aspect-ratio: auto;
+}
+
+/* Object Fit Utilities */
+.services-object-contain {
+  object-fit: contain;
+}
+
+.services-object-cover {
+  object-fit: cover;
+}
+
+.services-object-fill {
+  object-fit: fill;
+}
+
+.services-object-none {
+  object-fit: none;
+}
+
+.services-object-scale-down {
+  object-fit: scale-down;
+}
+
+/* Cursor Utilities */
+.services-cursor-auto {
+  cursor: auto;
+}
+
+.services-cursor-default {
+  cursor: default;
+}
+
+.services-cursor-pointer {
+  cursor: pointer;
+}
+
+.services-cursor-wait {
+  cursor: wait;
+}
+
+.services-cursor-text {
+  cursor: text;
+}
+
+.services-cursor-move {
+  cursor: move;
+}
+
+.services-cursor-help {
+  cursor: help;
+}
+
+.services-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/* User Select Utilities */
+.services-select-none {
+  user-select: none;
+}
+
+.services-select-text {
+  user-select: text;
+}
+
+.services-select-all {
+  user-select: all;
+}
+
+.services-select-auto {
+  user-select: auto;
+}
+
+/* Pointer Events */
+.services-pointer-events-none {
+  pointer-events: none;
+}
+
+.services-pointer-events-auto {
+  pointer-events: auto;
+}
+
+/* Resize Utilities */
+.services-resize-none {
+  resize: none;
+}
+
+.services-resize-y {
+  resize: vertical;
+}
+
+.services-resize-x {
+  resize: horizontal;
+}
+
+.services-resize {
+  resize: both;
+}
+
+/* Scroll Behavior */
+.services-scroll-auto {
+  scroll-behavior: auto;
+}
+
+.services-scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Touch Action */
+.services-touch-auto {
+  touch-action: auto;
+}
+
+.services-touch-none {
+  touch-action: none;
+}
+
+.services-touch-pan-x {
+  touch-action: pan-x;
+}
+
+.services-touch-pan-y {
+  touch-action: pan-y;
+}
+
+.services-touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Final Cleanup and Browser Compatibility */
+.services-main-container *,
+.services-main-container *::before,
+.services-main-container *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure proper stacking context */
+.services-main-container {
+  isolation: isolate;
+}
+
+/* End of Services.css */
